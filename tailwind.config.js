@@ -14,7 +14,7 @@ export default {
         tertiary: '#feffff',
       },
       screens: {
-        'platform-viewport-breakpoint': '768px',
+        'platform-viewport-breakpoint': '1280px',
       }
     },
   },
