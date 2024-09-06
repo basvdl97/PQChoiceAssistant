@@ -24,11 +24,19 @@
         </div>
 
         <!-- sliding menu -->
-        <div class="fixed bg-red-300 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out" :class="{
+        <div class="fixed bg-blue-50 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out" :class="{
             'translate-x-[100%]': !is_menu_open,
             'translate-x-[0%]': is_menu_open
         }">
-
+            <div v-for="menu_item in menu_items" :key="menu_item.value">
+                <button @click="$router.push({ name: menu_item.route_name })" class="w-full px-4 py-4 flex transition-colors duration-100 ease-in-out" :class="{
+                    'bg-primary text-white': selected_menu_item  == menu_item.value,
+                    'hover:bg-gray-100 hover:text-primary': selected_menu_item !== menu_item.value
+                }"
+                >
+                    {{ menu_item.label }}
+                </button>
+            </div>
         </div>
     </div>
 </template>
