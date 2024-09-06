@@ -1,6 +1,6 @@
 <template>
     <div>
-        Homepage Standard
+        Homepage Standard s
     </div>
 </template>
 

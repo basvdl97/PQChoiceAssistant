@@ -6,8 +6,28 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'HomePageRoute',
       component: HomePage
+    },
+    {
+      path: '/kem',
+      name: 'KEMPageRoute',
+      // component: HomePage
+    },
+    {
+      path: '/dss',
+      name: 'DSSPageRoute',
+      // component: HomePage
+    },
+    {
+      path: '/algorithm-overview',
+      name: 'AlgorithmOverviewPageRoute',
+      // component: HomePage
+    },
+    {
+      path: '/about',
+      name: 'AboutPageRoute',
+      // component: HomePage
     },
     // {
     //   path: '/about',
