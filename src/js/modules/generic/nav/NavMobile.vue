@@ -14,8 +14,8 @@
                 </button>
             </div>
 
-            <!-- menu items -->
-            <div @click="is_menu_open=!is_menu_open" class="ml-auto flex justify-end text-white">
+            <!-- hamburger -->
+            <div @click="is_menu_open=!is_menu_open" class="ml-auto flex justify-end text-white cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                 </svg>
@@ -30,7 +30,7 @@
             <div v-for="menu_item in menu_items" :key="menu_item.value">
                 <button @click="$router.push({ name: menu_item.route_name })" class="w-full px-4 py-4 flex transition-colors duration-100 ease-in-out" :class="{
                     'bg-primary text-white': selected_menu_item  == menu_item.value,
-                    'hover:bg-gray-100 hover:text-primary': selected_menu_item !== menu_item.value
+                    'hover:bg-gray-300 hover:text-primary': selected_menu_item !== menu_item.value
                 }"
                 >
                     {{ menu_item.label }}

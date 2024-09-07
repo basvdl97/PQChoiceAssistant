@@ -7,11 +7,9 @@ export default {
     extend: {
       colors: {
         // blue and green
-        primary: '#3f529f',
-        secondary: '#41b590',
-
-        // white background
-        tertiary: '#feffff',
+        primary: '#3f529f',   // dark blue
+        secondary: '#41b590', // green
+        tertiary: '#f3fffb',  // light green
       },
       screens: {
         'platform-viewport-breakpoint': '1280px',

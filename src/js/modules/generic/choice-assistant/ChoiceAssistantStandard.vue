@@ -3,6 +3,13 @@
     <div class="w-full relative flex justify-center mt-8">
         <!-- inner wrapper / contains the questionaire -->
         <div class="w-full max-w-5xl flex flex-col gap-8">
+            <!-- paginator -->
+            <ChoiceAssistantStepperStandard
+                :questions="questions"
+                :current_question="current_question"
+            />
+            
+
             <div v-for="question, i in questions[0].content" class="w-full flex gap-4">
 
                 <!-- question & answers -->
@@ -34,10 +41,19 @@
 </template>
 
 <script>
+    import ChoiceAssistantStepperStandard from './ChoiceAssistantStandard/ChoiceAssistantStepperStandard.vue'
+
     export default {
+        components: {
+            ChoiceAssistantStepperStandard,
+        },
         props: {
             questions: {
                 type: Object,
+                required: true,
+            },
+            current_question: {
+                type: Array,
                 required: true,
             },
         },

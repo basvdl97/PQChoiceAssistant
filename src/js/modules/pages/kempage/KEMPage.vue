@@ -2,11 +2,13 @@
     <div class="hidden platform-viewport-breakpoint:block" >
         <AssistantStandard 
             :questions="questions"
+            :current_question="current_question"
         />
     </div>
     <div class="block platform-viewport-breakpoint:hidden" >
         <AssistantMobile 
             :questions="questions"
+            :current_question="current_question"
         />
     </div>
 </template>
@@ -24,7 +26,8 @@
         },
         data(){
             return {
-                questions
+                questions,
+                current_question: [0, 0], // based on the json. [catergory, question]
             }
         }
     }
