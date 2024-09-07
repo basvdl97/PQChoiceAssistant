@@ -1,6 +1,5 @@
 <template>
     <div class="relative w-full">
-
         <!-- nav bar -->
         <div class="w-full bg-primary px-2 flex h-12 items-center">
             <!-- Logo img @/assets/nav-icon.png -->
@@ -24,7 +23,7 @@
         </div>
 
         <!-- sliding menu -->
-        <div class="fixed bg-blue-50 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out" :class="{
+        <div class="fixed z-10 bg-blue-50 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out" :class="{
             'translate-x-[100%]': !is_menu_open,
             'translate-x-[0%]': is_menu_open
         }">

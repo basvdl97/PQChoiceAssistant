@@ -12,5 +12,10 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  build: {
+    minify: 'esbuild', // default, fastest
+    // or use 'terser' if you prefer
+    // minify: 'terser',
+  },
 })

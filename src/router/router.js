@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../js/modules/pages/homepage/HomePage.vue'
+import KEMPage from '../js/modules/pages/kempage/KEMPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,7 +13,7 @@ const router = createRouter({
     {
       path: '/kem',
       name: 'KEMPageRoute',
-      // component: HomePage
+      component: KEMPage
     },
     {
       path: '/dss',
