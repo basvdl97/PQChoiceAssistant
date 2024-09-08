@@ -1,12 +1,12 @@
 <template>
     <div class="hidden platform-viewport-breakpoint:block" >
-        <AssistantStandard 
+        <ChoiceAssistantStandard 
             :questions="questions"
             :current_question="current_question"
         />
     </div>
     <div class="block platform-viewport-breakpoint:hidden" >
-        <AssistantMobile 
+        <ChoiceAssistantMobile 
             :questions="questions"
             :current_question="current_question"
         />
@@ -16,13 +16,13 @@
 <script>
     import { questions } from '@/js/json/questions.js'
 
-    import AssistantStandard from '@/js/modules/generic/choice-assistant/ChoiceAssistantStandard.vue'
-    import AssistantMobile from '@/js/modules/generic/choice-assistant/ChoiceAssistantMobile.vue'
+    import ChoiceAssistantStandard from '@/js/modules/generic/choice-assistant/ChoiceAssistantStandard.vue'
+    import ChoiceAssistantMobile from '@/js/modules/generic/choice-assistant/ChoiceAssistantMobile.vue'
 
     export default {
         components: {
-            AssistantStandard,
-            AssistantMobile
+            ChoiceAssistantStandard,
+            ChoiceAssistantMobile
         },
         data(){
             return {

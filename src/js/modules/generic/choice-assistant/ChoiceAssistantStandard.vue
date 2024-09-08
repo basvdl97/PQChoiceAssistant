@@ -2,16 +2,36 @@
     <!-- outer wrapper / spans full display to center the questionaire with some max width -->
     <div class="w-full relative flex justify-center mt-8">
         <!-- inner wrapper / contains the questionaire -->
-        <div class="w-full max-w-5xl flex flex-col gap-8">
+        <div class="w-full max-w-5xl">
             <!-- paginator -->
             <ChoiceAssistantStepperStandard
                 :questions="questions"
                 :current_question="current_question"
             />
-            
 
-            <div v-for="question, i in questions[0].content" class="w-full flex gap-4">
+            <div class="mt-8 mb-2 w-full flex justify-between">
+                <!-- previous question button -->
+                <button
+                    @click="gotoPreviousCategory"
+                    :disabled="current_question[0] == 0"
+                    class="px-4 py-2 bg-primary text-white font-semibold rounded-md"
+                    :class="{ 'cursor-not-allowed opacity-50': current_question[0] == 0 }"
+                >
+                    Previous Category
+                </button>
 
+                <!-- next question button -->
+                <button
+                    @click="gotoNextCategory"
+                    :disabled="current_question[0] == questions.length - 1"
+                    class="px-4 py-2 bg-secondary text-white font-semibold rounded-md"
+                    :class="{ 'cursor-not-allowed opacity-50': current_question[0] == questions.length - 1 }"
+                >
+                    Next Category
+                </button>
+            </div>
+
+            <div v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
                 <!-- question & answers -->
                 <div class="flex-1 py-2">
                     <div v-if="question.expert_level" class="text-primary font-bold text-lg">
@@ -26,9 +46,20 @@
                         </div>
                         {{ question?.question?.EN }}
                     </h2>
+
+                    <!-- Answer choices -->
+                    <div class="w-full flex flex-col gap-1 mt-4">
+                        <div v-for="answer, k in question.answers" :key="k" class="flex gap-4 items-center">
+                            <input type="radio" :id="`question-${i}-answer-${k}`" class="text-secondary border-secondary focus:ring-secondary" />
+                            <label :for="`question-${i}-answer-${k}`" class="text-black font-semibold text-sm">
+                                {{ answer.text.EN }}
+                            </label>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- devider -->
-                <div class="w-[1px] h-full bg-primary" />
+                <div class="w-[1px] flex-grow-0 bg-primary" />
 
                 <!-- description -->
                 <div class="flex-1 py-2 text-black font-semibold text-sm">
@@ -57,5 +88,14 @@
                 required: true,
             },
         },
+        emits: ['goto-next-question', 'goto-previous-question'],
+        methods: {
+            gotoNextCategory(){
+                this.current_question[0] += 1
+            },
+            gotoPreviousCategory(){
+                this.current_question[0] -= 1
+            }
+        }
     }
 </script>
