@@ -1,6 +1,8 @@
 <template>
-    <div>
-
+    <div class="">
+        <div v-for="answer in answers">
+            
+        </div>
     </div>
 </template>
 
