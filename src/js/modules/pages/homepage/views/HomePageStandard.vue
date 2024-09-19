@@ -1,6 +1,6 @@
 <template>
-    <div>
-        Homepage Standard s
+    <div class="pl-48">
+        Homepage Standard
     </div>
 </template>
 
