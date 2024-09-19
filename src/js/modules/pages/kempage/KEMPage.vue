@@ -7,6 +7,7 @@
     </div>
     <div class="block platform-viewport-breakpoint:hidden" >
         <ChoiceAssistantMobile 
+            :title_text="title_text"
             :questions="questions"
             :current_question="current_question"
         />
@@ -26,6 +27,8 @@
         },
         data(){
             return {
+                title_text: 'KEM choice assistant',
+
                 questions,
                 current_question: [0, 0], // based on the json. [catergory, question]
             }

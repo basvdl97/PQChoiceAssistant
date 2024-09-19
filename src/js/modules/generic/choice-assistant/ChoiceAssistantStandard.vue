@@ -31,7 +31,7 @@
                 </button>
             </div>
 
-            <div v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
+            <div @mouseenter="handleMouseEntersQuestion(i)" v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
                 <!-- question & answers -->
                 <div class="flex-1 py-2">
                     <div v-if="question.expert_level" class="text-primary font-bold text-lg">
@@ -88,13 +88,18 @@
                 required: true,
             },
         },
-        emits: ['goto-next-question', 'goto-previous-question'],
+        // emits: ['goto-next-question', 'goto-previous-question'],
         methods: {
             gotoNextCategory(){
+                this.current_question[1] = 0
                 this.current_question[0] += 1
             },
             gotoPreviousCategory(){
+                this.current_question[1] = 0
                 this.current_question[0] -= 1
+            },
+            handleMouseEntersQuestion(question_in_category_index){
+                this.current_question[1] = question_in_category_index;
             }
         }
     }
