@@ -1,7 +1,7 @@
 <template>
     <div class="w-full max-w-[500px] px-4 flex items-start">
         <!-- prev question controlls -->
-        <div @click="gotoPreviousQuestion" class="text-secondary cursor-pointer" :class="{
+        <div @click="gotoPreviousQuestion" class="" :class="{
             'text-secondary  cursor-pointer': !(current_question[0] == 0 && current_question[1] == 0),
             'text-gray-300 cursor-not-allowed': current_question[0] == 0 && current_question[1] == 0,
         }">

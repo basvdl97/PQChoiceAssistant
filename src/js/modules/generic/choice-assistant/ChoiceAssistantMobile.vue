@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="w-full px-8 pt-8 bg-white text-justify flex-1  leading-tight">
+        <div class="w-full px-8 pt-8 bg-white text-justify flex-1  leading-tight text-sm">
             {{ questions[current_question[0]].content[current_question[1]]?.description?.EN }}
         </div>
     </div>
