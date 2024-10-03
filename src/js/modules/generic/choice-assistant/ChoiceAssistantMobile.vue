@@ -28,8 +28,8 @@
             <!-- Multiple choice -->
             <div class="w-full flex flex-col gap-1 mt-4">
                 <div v-for="answer, k in current_question_object?.answers" :key="k" class="flex gap-4 items-center">
-                    <input :checked="current_question_object?.selected_answers?.includes(k)" @change="(event) => handleSelectAnswer(event, current_question_object, k)" type="checkbox" :id="`question-${current_question[0]}-answer-${k}`" class="text-secondary border-secondary focus:ring-secondary" />
-                    <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md">
+                    <ChoiceAssistantCheckbox :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`" />
+                    <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md cursor-pointer" @click="handleSelectAnswer(current_question_object, k)">
                         {{ answer.text.EN }}
                     </label>
                 </div>
@@ -71,10 +71,12 @@
 
 <script>
     import ChoiceAssistantStepperMobile from './ChoiceAssistantMobile/ChoiceAssistantStepperMobile.vue';
-
+    import ChoiceAssistantCheckbox from './ChoiceAssistantCheckbox.vue';
+    
     export default {
         components: {
             ChoiceAssistantStepperMobile,
+            ChoiceAssistantCheckbox
         },
         props: {
             title_text: {
@@ -96,15 +98,11 @@
             }
         },
         methods: {
-            handleSelectAnswer(event, question, answer_index){
-                if(event.target.checked){
-                    if(!question.selected_answers.includes(answer_index)){
-                        question.selected_answers.push(answer_index)
-                    }
+            handleSelectAnswer(question, answer_index){
+                if(question.selected_answers.includes(answer_index)){
+                    question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
                 }else{
-                    if(question.selected_answers.includes(answer_index)){
-                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
-                    }
+                    question.selected_answers.push(answer_index)
                 }
             }
         },
