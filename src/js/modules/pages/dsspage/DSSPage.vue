@@ -15,7 +15,7 @@
 </template>
 
 <script>
-    import { questions } from '@/js/json/kem-questions.js'
+    import { questions } from '@/js/json/dss-questions.js'
 
     import ChoiceAssistantStandard from '@/js/modules/generic/choice-assistant/ChoiceAssistantStandard.vue'
     import ChoiceAssistantMobile from '@/js/modules/generic/choice-assistant/ChoiceAssistantMobile.vue'
@@ -27,7 +27,7 @@
         },
         data(){
             return {
-                title_text: 'KEM choice assistant',
+                title_text: 'DSS choice assistant',
 
                 questions,
                 current_question: [0, 0], // based on the json. [catergory, question]

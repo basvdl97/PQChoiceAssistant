@@ -13,7 +13,7 @@
         <div class="w-full max-w-[500px] mt-12 px-8">
             <!-- Question text -->
             <div class="w-full max-w-[400px]">
-                <div v-if="questions[current_question[0]].content[current_question[1]]?.expert_level" class="text-primary font-bold text-lg flex items-center gap-3 mb-1">
+                <div v-if="current_question_object?.expert_level" class="text-primary font-bold text-lg flex items-center gap-3 mb-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
                         <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
                         <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
@@ -21,14 +21,14 @@
                     Expert-level question
                 </div>
                 <h2 class="text-secondary text-xl font-semibold leading-none relative">
-                    {{ questions[current_question[0]].content[current_question[1]]?.question?.EN }}
+                    {{ current_question_object?.question?.EN }}
                 </h2>
             </div>
 
             <!-- Multiple choice -->
             <div class="w-full flex flex-col gap-1 mt-4">
-                <div v-for="answer, k in questions[current_question[0]].content[current_question[1]]?.answers" :key="k" class="flex gap-4 items-center">
-                    <input type="radio" :id="`question-${current_question[0]}-answer-${k}`" class="text-secondary border-secondary focus:ring-secondary" />
+                <div v-for="answer, k in current_question_object?.answers" :key="k" class="flex gap-4 items-center">
+                    <input :checked="current_question_object?.selected_answers?.includes(k)" @change="(event) => handleSelectAnswer(event, current_question_object, k)" type="checkbox" :id="`question-${current_question[0]}-answer-${k}`" class="text-secondary border-secondary focus:ring-secondary" />
                     <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md">
                         {{ answer.text.EN }}
                     </label>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="w-full px-8 pt-8 bg-white text-justify flex-1  leading-tight text-sm">
-            {{ questions[current_question[0]].content[current_question[1]]?.description?.EN }}
+            {{ current_question_object?.description?.EN }}
         </div>
     </div>
 </template>
@@ -93,6 +93,24 @@
         data(){
             return {
                 info_expanded: false,
+            }
+        },
+        methods: {
+            handleSelectAnswer(event, question, answer_index){
+                if(event.target.checked){
+                    if(!question.selected_answers.includes(answer_index)){
+                        question.selected_answers.push(answer_index)
+                    }
+                }else{
+                    if(question.selected_answers.includes(answer_index)){
+                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
+                    }
+                }
+            }
+        },
+        computed: {
+            current_question_object(){
+                return this.questions[this.current_question[0]]?.content[this.current_question[1]];
             }
         }
     }

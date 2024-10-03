@@ -50,7 +50,7 @@
                     <!-- Answer choices -->
                     <div class="w-full flex flex-col gap-1 mt-4">
                         <div v-for="answer, k in question.answers" :key="k" class="flex gap-4 items-center">
-                            <input type="radio" :id="`question-${i}-answer-${k}`" class="text-secondary border-secondary focus:ring-secondary" />
+                            <input :checked="question?.selected_answers?.includes(k)" @change="(event) => handleSelectAnswer(event, question, k)" type="checkbox" :id="`question-${i}-answer-${k}`"  />
                             <label :for="`question-${i}-answer-${k}`" class="text-black font-semibold text-sm">
                                 {{ answer.text.EN }}
                             </label>
@@ -100,7 +100,20 @@
             },
             handleMouseEntersQuestion(question_in_category_index){
                 this.current_question[1] = question_in_category_index;
+            },
+
+            handleSelectAnswer(event, question, answer_index){
+                if(event.target.checked){
+                    if(!question.selected_answers.includes(answer_index)){
+                        question.selected_answers.push(answer_index)
+                    }
+                }else{
+                    if(question.selected_answers.includes(answer_index)){
+                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
+                    }
+                }
             }
         }
     }
 </script>
+
