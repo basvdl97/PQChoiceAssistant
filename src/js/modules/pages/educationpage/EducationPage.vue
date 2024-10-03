@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td v-for="(algo, j) in algorithms" class="text-center text-black border-l border-l-1 border-primary px-2 py-2">
+                            <td v-for="(algo, j) in algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
                                 {{ education_table[characteristic][algo].EN }}
                             </td>
                         </tr>
