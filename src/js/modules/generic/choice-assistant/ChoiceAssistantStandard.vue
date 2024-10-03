@@ -4,6 +4,10 @@
         <template v-if="tab == 'choice-assistant'">
             <!-- inner wrapper / contains the questionaire -->
             <div class="w-full max-w-5xl">
+                <h1 class="text-secondary font-bold text-2xl ml-2">
+                    {{ title_text }}
+                </h1>
+                
                 <!-- paginator -->
                 <ChoiceAssistantStepperStandard
                     :questions="questions"
@@ -81,7 +85,7 @@
             </div>
         </template> <!-- choice assistant questionair -->
         <template v-else-if="tab == 'results'">
-            <ChoiceAssistantResultsStandard :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
+            <ChoiceAssistantResultsStandard :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
         </template>
     </div>
 </template>
@@ -100,6 +104,10 @@
             ChoiceAssistantResultsStandard
         },
         props: {
+            title_text: {
+                type: String,
+                required: true,
+            },
             questions: {
                 type: Object,
                 required: true,

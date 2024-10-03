@@ -60,7 +60,7 @@
                 this.current_question[0] = category_index;  // set catergory
             },
             questionHasAtLeastOneSelectedAnswer(question){
-                return question.selected_answers.length > 0
+                return question?.selected_answers?.length > 0
             }
         }
     }

@@ -100,7 +100,7 @@
             },
             
             questionHasAtLeastOneSelectedAnswer(question){
-                return question.selected_answers.length > 0
+                return question?.selected_answers?.length > 0
             }
         }
     }

@@ -1,6 +1,9 @@
 <template>
     <div class="w-full max-w-7xl mt-8">
-        <div class="w-full flex justify-end">
+        <div class="w-full flex justify-between">
+            <h1 class="text-primary font-bold text-2xl ml-2">
+                {{ title_text }}
+            </h1>
             <button @click="handleBackToQuestions" class="px-4 py-2 bg-primary text-white font-semibold rounded-md mb-4">
                 Back to questions
             </button>
@@ -68,6 +71,10 @@
 <script>
     export default {
         props: {
+            title_text: {
+                type: String,
+                default: '',
+            },
             questions: {
                 type: Object,
                 default: [],
