@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../js/modules/pages/homepage/HomePage.vue'
 import KEMPage from '../js/modules/pages/kempage/KEMPage.vue'
 import DSSPage from '../js/modules/pages/dsspage/DSSPage.vue'
+import EducationPage from '@/js/modules/pages/educationpage/EducationPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +25,7 @@ const router = createRouter({
     {
       path: '/algorithm-overview',
       name: 'AlgorithmOverviewPageRoute',
-      // component: HomePage
+      component: EducationPage
     },
     {
       path: '/about',
