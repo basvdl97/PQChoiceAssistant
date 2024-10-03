@@ -16,8 +16,9 @@
             <!-- category question balls -->
             <div class="flex gap-1 items-center mt-1 " >
                 <!-- ball -->
-                <div v-for="(question, j) in questions[i].content" :key="j" class="w-4 h-4 rounded-full border border-secondary text-secondary leading-none flex items-center justify-center relative" :class="{
-
+                <div v-for="(question, j) in questions[i].content" :key="j" class="w-4 h-4 rounded-full border border-secondary  leading-none flex items-center justify-center relative" :class="{
+                    'bg-secondary text-white': questionHasAtLeastOneSelectedAnswer(question),
+                    'bg-none text-secondary': !questionHasAtLeastOneSelectedAnswer(question),
                 }">
                     <svg v-if="question?.expert_level" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
                         <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
@@ -48,5 +49,10 @@
                 required: true,
             },
         },
+        methods:{
+            questionHasAtLeastOneSelectedAnswer(question){
+                return question.selected_answers.length > 0
+            }
+        }
     }
 </script>
