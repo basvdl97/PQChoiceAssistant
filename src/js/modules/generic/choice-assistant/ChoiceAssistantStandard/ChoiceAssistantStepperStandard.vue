@@ -3,7 +3,7 @@
         <!-- Category Step -->
         <div v-for="(question_category, i) in questions">
             <!-- category name -->
-            <div>
+            <div @click="handleClickCategory(i)" class="cursor-pointer">
                 <h3 class="text-sm font-semibold" :class="{
                     'bg-secondary text-white rounded-md  px-2': current_question[0] == i,
                     'text-secondary': current_question[0] != i,
@@ -16,7 +16,7 @@
             <!-- category question balls -->
             <div class="flex gap-1 items-center mt-1 " >
                 <!-- ball -->
-                <div v-for="(question, j) in questions[i].content" :key="j" class="w-4 h-4 rounded-full border border-secondary  leading-none flex items-center justify-center relative" :class="{
+                <div @click="handleClickQuestionCircle(i, j)" v-for="(question, j) in questions[i].content" :key="j" class="w-4 h-4 rounded-full border border-secondary  leading-none flex items-center justify-center relative cursor-pointer" :class="{
                     'bg-secondary text-white': questionHasAtLeastOneSelectedAnswer(question),
                     'bg-none text-secondary': !questionHasAtLeastOneSelectedAnswer(question),
                 }">
@@ -50,6 +50,15 @@
             },
         },
         methods:{
+            handleClickQuestionCircle(category_index, question_index){
+                this.current_question[1] = 0;               // ensure no error (cuz q 0 always exist in cat)
+                this.current_question[0] = category_index;  // set catergory
+                this.current_question[1] = question_index;  // set question in category
+            },
+            handleClickCategory(category_index){
+                this.current_question[1] = 0;               // ensure no error (cuz q 0 always exist in cat)
+                this.current_question[0] = category_index;  // set catergory
+            },
             questionHasAtLeastOneSelectedAnswer(question){
                 return question.selected_answers.length > 0
             }

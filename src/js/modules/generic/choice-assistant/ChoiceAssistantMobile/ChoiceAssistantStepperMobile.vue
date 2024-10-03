@@ -22,7 +22,7 @@
             <!-- question in cateroy indicator -->
             <div class="w-full flex justify-center mt-2 gap-3">
                 <!-- ball -->
-                <div v-for="(question, j) in questions[current_question[0]].content" :key="j" class="w-6 h-6 rounded-full border border-secondary  leading-none flex items-center justify-center relative" :class="{
+                <div @click="handleClickQuestionCircle(j)" v-for="(question, j) in questions[current_question[0]].content" :key="j" class="w-6 h-6 rounded-full border border-secondary  leading-none flex items-center justify-center relative cursor-pointer" :class="{
                     'bg-secondary text-white': questionHasAtLeastOneSelectedAnswer(question),
                     'bg-none text-secondary': !questionHasAtLeastOneSelectedAnswer(question),
                 }">
@@ -66,6 +66,10 @@
             },
         },
         methods: {
+            handleClickQuestionCircle(question_index){
+                this.current_question[1] = question_index;  // set question in category
+            },
+
             gotoNextQuestion(){
                 // if too far right ignore
                 if(this.current_question[0] == this.questions.length - 1 && this.current_question[1] == this.questions[this.current_question[0]].content.length - 1){
