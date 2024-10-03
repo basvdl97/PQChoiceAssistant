@@ -90,6 +90,21 @@
                     return scores;
                 }
 
+                // iterate of all possible answer scores, over each key, if the key is has a number as value
+                // then set the scores[key] = 0; (so that unscored results also show).
+                this.questions.forEach((category, i) => {
+                    category.content.forEach((question, j) => {
+                        question.answers.forEach((answer) => {
+                            for (const [key, value] of Object.entries(answer.scores)) {
+                                if(!scores[key] && !isNaN(value)){
+                                    scores[key] = 0;
+                                }
+                            }
+                        });
+                    });
+                });
+
+                // go over all question selected answers, and count up the score.
                 this.questions.forEach((category, i) => {
                     category.content.forEach((question, j) => {
                         question.selected_answers.forEach((answer_index) => {
