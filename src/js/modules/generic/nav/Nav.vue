@@ -24,27 +24,27 @@
                 selected_menu_item: 'home',
                 menu_items: [
                     {
-                        value: this.$router.resolve({name: 'HomePageRoute'}).href.slice(1),
+                        value: this.$router.resolve({name: 'HomePageRoute'}).href.split('/').pop(),
                         label: 'Home',
                         route_name: 'HomePageRoute'
                     },
                     {
-                        value: this.$router.resolve({name: 'KEMPageRoute'}).href.slice(1),
+                        value: this.$router.resolve({name: 'KEMPageRoute'}).href.split('/').pop(),
                         label: 'KEM choice assistant',
                         route_name: 'KEMPageRoute',
                     },
                     {
-                        value: this.$router.resolve({name: 'DSSPageRoute'}).href.slice(1),
+                        value: this.$router.resolve({name: 'DSSPageRoute'}).href.split('/').pop(),
                         label: 'DSS choice assistant',
                         route_name: 'DSSPageRoute'
                     },
                     {
-                        value: this.$router.resolve({name: 'AlgorithmOverviewPageRoute'}).href.slice(1),
+                        value: this.$router.resolve({name: 'AlgorithmOverviewPageRoute'}).href.split('/').pop(),
                         label: 'Overview of PQC algorithms',
                         route_name: 'AlgorithmOverviewPageRoute'
                     },
                     {
-                        value: this.$router.resolve({name: 'AboutPageRoute'}).href.slice(1),
+                        value: this.$router.resolve({name: 'AboutPageRoute'}).href.split('/').pop(),
                         label: 'About',
                         route_name: 'AboutPageRoute'
                     },
