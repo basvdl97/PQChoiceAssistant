@@ -8,7 +8,7 @@ const router = createRouter({
   history: createWebHistory('/PQChoiceAssistant'),
   routes: [
     {
-      path: '/',
+      path: '/PQChoiceAssistant',
       name: 'HomePageRoute',
       component: HomePage
     },
