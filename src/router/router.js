@@ -5,7 +5,7 @@ import DSSPage from '../js/modules/pages/dsspage/DSSPage.vue'
 import EducationPage from '@/js/modules/pages/educationpage/EducationPage.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory("/PQChoiceAssistant"),
   routes: [
     {
       path: '/',
