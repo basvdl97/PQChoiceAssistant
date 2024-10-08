@@ -3,6 +3,7 @@ import HomePage from '../js/modules/pages/homepage/HomePage.vue'
 import KEMPage from '../js/modules/pages/kempage/KEMPage.vue'
 import DSSPage from '../js/modules/pages/dsspage/DSSPage.vue'
 import EducationPage from '@/js/modules/pages/educationpage/EducationPage.vue'
+import AboutPage from '@/js/modules/pages/aboutpage/AboutPage.vue'
 
 const router = createRouter({
   history: createWebHistory('/PQChoiceAssistant'),
@@ -10,7 +11,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'HomePageRoute',
-      component: HomePage
+      component: HomePage,
+      meta: { title: 'Home' }
     },
     {
       path: '/kem',
@@ -30,7 +32,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'AboutPageRoute',
-      // component: HomePage
+      component: AboutPage
     },
     // {
     //   path: '/about',

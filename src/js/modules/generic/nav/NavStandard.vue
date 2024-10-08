@@ -16,7 +16,7 @@
             <!-- menu items -->
             <div class="flex w-fit gap-6 mr-2">
                 <div v-for="menu_item in menu_items" :key="menu_item.value">
-                    <button @click="$router.push({ name: menu_item.route_name })" class="text-white">
+                    <button @click="handleClickNavItem(menu_item)" class="text-white">
                         <h2 :class="{'font-bold underline': selected_menu_item === menu_item.value}">
                             {{ menu_item.label }}
                         </h2>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { h } from 'vue';
+
 export default {
     props: {
         menu_items: {
@@ -39,5 +41,11 @@ export default {
             required: true,
         },
     },
+    emits: ['handle-click-nav-item'],
+    methods: {
+        handleClickNavItem(menu_item) {
+            this.$emit('handle-click-nav-item', menu_item);
+        },
+    }
 }
 </script>

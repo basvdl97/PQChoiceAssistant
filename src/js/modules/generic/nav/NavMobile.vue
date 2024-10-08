@@ -28,7 +28,7 @@
             'translate-x-[0%]': is_menu_open
         }">
             <div v-for="menu_item in menu_items" :key="menu_item.value">
-                <button @click="$router.push({ name: menu_item.route_name })" class="w-full px-4 py-4 flex transition-colors duration-100 ease-in-out" :class="{
+                <button @click="handleClickNavItem(menu_item)" class="w-full px-4 py-4 flex transition-colors duration-100 ease-in-out" :class="{
                     'bg-primary text-white': selected_menu_item  == menu_item.value,
                     'hover:bg-gray-300 hover:text-primary': selected_menu_item !== menu_item.value
                 }"
@@ -52,10 +52,16 @@ export default {
             required: true,
         },
     },
+    emits: ['handle-click-nav-item'],
     data(){
         return {
             is_menu_open: false
         }
+    },
+    methods: {
+        handleClickNavItem(menu_item) {
+            this.$emit('handle-click-nav-item', menu_item);
+        },
     }
 }
 </script>

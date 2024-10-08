@@ -2,10 +2,14 @@
     <NavStandard class="hidden platform-viewport-breakpoint:block" 
         :selected_menu_item="selected_menu_item"
         :menu_items="menu_items"
+
+        @handle-click-nav-item="handleClickNavItem"
     />
     <NavMobile class="block platform-viewport-breakpoint:hidden" 
         :selected_menu_item="selected_menu_item"
         :menu_items="menu_items"
+
+        @handle-click-nav-item="handleClickNavItem"
     />
 </template>
 
@@ -49,16 +53,25 @@
                         route_name: 'AboutPageRoute'
                     },
                     {
-                        value: 'x',
+                        value: 'ext:github',
                         label: 'Git repo',
-                        route_name: 'GitHubPageRoute'
+                        action: () => window.open('https://github.com/basvdl97/PQChoiceAssistant/tree/main', '_blank')
                     }
                 ]
             }
         },
+        methods:{
+            handleClickNavItem(menu_item){
+                if(menu_item.value.startsWith('ext:')){
+                    menu_item.action();
+                } else {
+                    this.$router.push({name: menu_item.route_name});
+                }
+            }
+        },
         watch: {
             $route(to, from) {
-                this.selected_menu_item = to.path.slice(1);
+                this.selected_menu_item = to.path.split('/').pop();
             }
         }
     }
