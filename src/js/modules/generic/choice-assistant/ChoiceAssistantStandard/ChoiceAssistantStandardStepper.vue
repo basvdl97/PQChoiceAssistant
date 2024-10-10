@@ -9,7 +9,7 @@
                     'text-secondary': current_question[0] != i,
 
                 }">
-                    {{ question_category.category.split('-')[1].slice(1) }}
+                    {{ question_category.category }}
                 </h3>
             </div>
 

@@ -15,7 +15,7 @@
             <!-- category name -->
             <div>
                 <h3 class="text-md font-semibold bg-secondary text-white px-3 rounded-sm leading-tight" >
-                    {{ questions[current_question[0]].category.split('-')[1].slice(1) }}
+                    {{ questions[current_question[0]].category }}
                 </h3>
             </div>
 
