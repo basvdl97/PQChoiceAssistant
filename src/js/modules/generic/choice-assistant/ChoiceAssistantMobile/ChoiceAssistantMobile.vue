@@ -28,8 +28,8 @@
             <!-- Multiple choice -->
             <div class="w-full flex flex-col gap-1 mt-4">
                 <div v-for="answer, k in current_question_object?.answers" :key="k" class="flex gap-4 items-center">
-                    <ChoiceAssistantRadio v-if="current_question_object.max_selectable_answers <= 1" :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${i}-answer-${k}`"  />
-                    <ChoiceAssistantCheckbox v-else :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${i}-answer-${k}`"  />
+                    <ChoiceAssistantRadio v-if="current_question_object.max_selectable_answers <= 1" :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`"  />
+                    <ChoiceAssistantCheckbox v-else :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`"  />
                     <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md cursor-pointer" @click="handleSelectAnswer(current_question_object, k)">
                         {{ answer.text.EN }}
                     </label>
@@ -102,10 +102,14 @@
         },
         methods: {
             handleSelectAnswer(question, answer_index){
-                if(question.selected_answers.includes(answer_index)){
-                    question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
-                }else{
-                    question.selected_answers.push(answer_index)
+                if(question.max_selectable_answers <= 1){
+                    question.selected_answers = [answer_index]
+                } else { 
+                    if(question.selected_answers.includes(answer_index)){
+                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
+                    }else{
+                        question.selected_answers.push(answer_index)
+                    }
                 }
             }
         },

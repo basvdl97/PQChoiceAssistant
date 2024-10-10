@@ -14,7 +14,7 @@
             </div>
 
             <!-- category question balls -->
-            <div class="flex gap-1 items-center mt-1" >
+            <div class="flex gap-1 items-center mt-1 ">
                 <!-- question in category ball -->
                 <div @click="handleClickQuestionCircle(i, j)" v-for="(question, j) in questions[i].content" :key="j" class="w-5 h-5 rounded-full border border-secondary leading-none flex items-center justify-center relative cursor-pointer" :class="{
                     'bg-secondary text-white': questionHasAtLeastOneSelectedAnswer(question),

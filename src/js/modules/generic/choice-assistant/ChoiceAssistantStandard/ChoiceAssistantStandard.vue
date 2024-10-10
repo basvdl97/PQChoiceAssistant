@@ -137,10 +137,14 @@
                 this.current_question[1] = question_in_category_index;
             },
             handleSelectAnswer(question, answer_index){
-                if(question.selected_answers.includes(answer_index)){
-                    question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
-                }else{
-                    question.selected_answers.push(answer_index)
+                if(question.max_selectable_answers <= 1){
+                    question.selected_answers = [answer_index]
+                } else { 
+                    if(question.selected_answers.includes(answer_index)){
+                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
+                    }else{
+                        question.selected_answers.push(answer_index)
+                    }
                 }
             }
         }
