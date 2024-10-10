@@ -65,7 +65,8 @@
                         <!-- Answer choices -->
                         <div class="w-full flex flex-col gap-1 mt-4">
                             <div v-for="answer, k in question.answers" :key="k" class="flex gap-4 items-center">
-                                <ChoiceAssistantCheckbox :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
+                                <ChoiceAssistantRadio v-if="question.max_selectable_answers <= 1" :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
+                                <ChoiceAssistantCheckbox v-else :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
                                 <label :for="`question-${i}-answer-${k}`" class="text-black font-semibold text-sm cursor-pointer" @click="handleSelectAnswer(question, k)">
                                     {{ answer.text.EN }}
                                 </label>
@@ -94,11 +95,13 @@
     import ChoiceAssistantStandardStepper from './ChoiceAssistantStandardStepper.vue'
     import ChoiceAssistantStandardResults from './ChoiceAssistantStandardResults.vue';
     import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
+    import ChoiceAssistantRadio from './../ChoiceAssistantRadio.vue';
 
     export default {
         components: {
             ChoiceAssistantStandardStepper,
             ChoiceAssistantCheckbox,
+            ChoiceAssistantRadio,
 
             ChoiceAssistantStandardResults
         },

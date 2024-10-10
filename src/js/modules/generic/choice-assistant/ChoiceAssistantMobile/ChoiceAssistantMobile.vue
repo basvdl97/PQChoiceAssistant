@@ -28,7 +28,8 @@
             <!-- Multiple choice -->
             <div class="w-full flex flex-col gap-1 mt-4">
                 <div v-for="answer, k in current_question_object?.answers" :key="k" class="flex gap-4 items-center">
-                    <ChoiceAssistantCheckbox :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`" />
+                    <ChoiceAssistantRadio v-if="current_question_object.max_selectable_answers <= 1" :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${i}-answer-${k}`"  />
+                    <ChoiceAssistantCheckbox v-else :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${i}-answer-${k}`"  />
                     <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md cursor-pointer" @click="handleSelectAnswer(current_question_object, k)">
                         {{ answer.text.EN }}
                     </label>
@@ -72,11 +73,13 @@
 <script>
     import ChoiceAssistantMobileStepper from './ChoiceAssistantMobileStepper.vue';
     import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
+    import ChoiceAssistantRadio from './../ChoiceAssistantRadio.vue';
     
     export default {
         components: {
             ChoiceAssistantMobileStepper,
-            ChoiceAssistantCheckbox
+            ChoiceAssistantCheckbox,
+            ChoiceAssistantRadio
         },
         props: {
             title_text: {
