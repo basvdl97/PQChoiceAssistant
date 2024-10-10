@@ -15,7 +15,8 @@
             </div>
 
             <!-- hamburger -->
-            <div ref="myElement2" @click="is_menu_open = !is_menu_open" class="ml-auto flex justify-end text-white cursor-pointer">
+            <div ref="myElement2" @click="is_menu_open = !is_menu_open"
+                class="ml-auto flex justify-end text-white cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-list"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -25,7 +26,8 @@
         </div>
 
         <!-- sliding menu -->
-        <div ref="myElement" class="fixed z-10 bg-blue-50 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out"
+        <div ref="myElement"
+            class="fixed z-10 bg-blue-50 w-5/6 max-w-[300px] h-[calc(100vh_-_3rem)] right-0 top-12 transition-transform duration-500 ease-in-out"
             :class="{
                 'translate-x-[100%]': !is_menu_open,
                 'translate-x-[0%]': is_menu_open
@@ -63,40 +65,40 @@ export default {
     },
     mounted() {
         document.addEventListener("click", this.handleClickOutside);
-        this.toggleFullscreen();
+        // this.toggleFullscreen();
     },
     beforeDestroy() {
         document.removeEventListener("click", this.handleClickOutside);
     },
     methods: {
 
-    toggleFullscreen() {
-      const elem = document.documentElement; // The whole page
+        toggleFullscreen() {
+            const elem = document.documentElement; // The whole page
 
-      if (!document.fullscreenElement) {
-        // Request fullscreen
-        if (elem.requestFullscreen) {
-          elem.requestFullscreen();
-        } else if (elem.mozRequestFullScreen) { // Firefox
-          elem.mozRequestFullScreen();
-        } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
-          elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { // IE/Edge
-          elem.msRequestFullscreen();
-        }
-      } else {
-        // Exit fullscreen
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { // Firefox
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { // IE/Edge
-          document.msExitFullscreen();
-        }
-      }
-    },
+            if (!document.fullscreenElement) {
+                // Request fullscreen
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.mozRequestFullScreen) { // Firefox
+                    elem.mozRequestFullScreen();
+                } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) { // IE/Edge
+                    elem.msRequestFullscreen();
+                }
+            } else {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        },
         handleClickNavItem(menu_item) {
             this.$emit('handle-click-nav-item', menu_item);
         },

@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 w-full rounded-md bg-tertiary flex justify-between gap-4">
+    <div class="p-4 w-full rounded-md bg-tertiary flex justify-between gap-4 relative">
         <!-- Category Step -->
         <div v-for="(question_category, i) in questions">
             <!-- category name -->
@@ -36,10 +36,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- previous and next caterogy buttons -->
+        <button 
+            @click="gotoPreviousCategory"    
+            class="absolute -left-20 top-2 text-secondary"
+            :disabled="current_question[0] == 0"
+            :class="{ 'cursor-not-allowed opacity-50': current_question[0] == 0 }"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+            </svg>
+        </button>
+
+
+        <button
+            @click="gotoNextCategory" 
+            class="absolute -right-20 top-2 text-secondary"  
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
+        </button>
+        <button v-if="current_question[0] == questions.length - 1"
+            @click="gotoNextCategory" 
+            class="absolute -right-28 top-2 text-secondary"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+            </svg>
+        </button>
+        <div v-if="current_question[0] == questions.length - 1" class="absolute -right-24 top-16 font-semibold text-secondary text-sm">
+            resultaten
+        </div>
+
     </div>
 </template>
 
 <script>
+
+
     export default {
         props: {
             questions: {
@@ -51,6 +87,7 @@
                 required: true,
             },
         },
+        emits: ['goto-results'],
         methods:{
             handleClickQuestionCircle(category_index, question_index){
                 this.current_question[1] = 0;               // ensure no error (cuz q 0 always exist in cat)
@@ -63,7 +100,22 @@
             },
             questionHasAtLeastOneSelectedAnswer(question){
                 return question?.selected_answers?.length > 0
-            }
+            },
+
+            
+            gotoNextCategory(){
+                if(this.current_question[0] == this.questions.length - 1){
+                    this.$emit('goto-results');
+                    return;
+                }
+
+                this.current_question[1] = 0
+                this.current_question[0] += 1
+            },
+            gotoPreviousCategory(){
+                this.current_question[1] = 0
+                this.current_question[0] -= 1
+            },
         }
     }
 </script>

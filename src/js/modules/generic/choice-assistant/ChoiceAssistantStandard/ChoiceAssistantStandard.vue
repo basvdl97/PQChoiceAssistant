@@ -12,39 +12,9 @@
                 <ChoiceAssistantStandardStepper
                     :questions="questions"
                     :current_question="current_question"
+
+                    @goto-results="tab = 'results'"
                 />
-
-                <div class="mt-8 mb-2 w-full flex justify-between">
-                    <!-- previous question button -->
-                    <button
-                        @click="gotoPreviousCategory"
-                        :disabled="current_question[0] == 0"
-                        class="px-4 py-2 bg-primary text-white font-semibold rounded-md"
-                        :class="{ 'cursor-not-allowed opacity-50': current_question[0] == 0 }"
-                    >
-                        Previous Category
-                    </button>
-
-                    <!-- next question button -->
-                    <template v-if="current_question[0] == questions.length - 1">
-                        <button
-                            @click="tab = 'results'"
-                            class="px-4 py-2 bg-secondary text-white font-semibold rounded-md"
-                        >
-                            Results
-                        </button>
-                    </template>
-                    <template v-else>
-                        <button
-                            @click="gotoNextCategory"
-                            :disabled="current_question[0] == questions.length - 1"
-                            class="px-4 py-2 bg-secondary text-white font-semibold rounded-md"
-                            :class="{ 'cursor-not-allowed opacity-50': current_question[0] == questions.length - 1 }"
-                        >
-                            Next Category
-                        </button>
-                    </template>
-                </div>
 
                 <div @mouseenter="handleMouseEntersQuestion(i)" v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
                     <!-- question & answers -->
@@ -125,14 +95,6 @@
             }
         },
         methods: {
-            gotoNextCategory(){
-                this.current_question[1] = 0
-                this.current_question[0] += 1
-            },
-            gotoPreviousCategory(){
-                this.current_question[1] = 0
-                this.current_question[0] -= 1
-            },
             handleMouseEntersQuestion(question_in_category_index){
                 this.current_question[1] = question_in_category_index;
             },
