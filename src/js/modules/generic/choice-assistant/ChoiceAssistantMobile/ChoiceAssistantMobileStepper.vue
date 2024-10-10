@@ -14,7 +14,7 @@
         <div class="flex-1 px-8 flex flex-col items-center">
             <!-- category name -->
             <div>
-                <h3 class="text-md font-semibold bg-secondary text-white px-3 rounded-sm leading-tight" >
+                <h3 class="text-md font-semibold bg-secondary text-white px-3 rounded-sm leading-normal" >
                     {{ questions[current_question[0]].category }}
                 </h3>
             </div>

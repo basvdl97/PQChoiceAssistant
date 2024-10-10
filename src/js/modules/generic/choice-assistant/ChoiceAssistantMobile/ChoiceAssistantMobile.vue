@@ -37,11 +37,38 @@
             </div>
         </div>
     </div>
+
+    <!-- prev &  next question button -->
+    <div class="fixed bottom-16 w-[100vw] flex justify-center">
+        <div class="w-full max-w-[500px] flex justify-between sm:text-lg text-sm text-secondary font-semibold px-4">
+            <div @click="gotoPreviousQuestion" class="flex gap-1 items-center " :class="{'text-gray-300 cursor-not-allowed': current_question[0] == 0 && current_question[1] == 0, 'cursor-pointer': !(current_question[0] == 0 && current_question[1] == 0)}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                </svg>
+                <div>Previous Question</div>
+            </div>
+            <div @click="gotoNextQuestion" class="flex gap-1 items-center cursor-pointer">
+                <div>
+                    <template v-if="current_question[0] == questions.length - 1 && current_question[1] == questions[current_question[0]].length - 1" >
+                        Next Question
+                    </template>
+                    <template v-else>
+                        Results
+                    </template>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
     <!-- bottom nav + info slider -->
     <div class="fixed z-10 bottom-0 w-[100vw] h-2/4 flex flex-col transition-transform duration-500 ease-in-out" :class="{
         'translate-y-0': info_expanded,
         'translate-y-[calc(50vh_-_2.5rem)]': !info_expanded,
     }">
+
         <!-- info slider -->
         <div @click="info_expanded=!info_expanded" class="w-full flex items-center bg-primary text-white h-10 min-h-10 max-h-10 px-2 cursor-pointer transition-all duration-300 ease-in-out" :class="{
 
@@ -74,6 +101,7 @@
     import ChoiceAssistantMobileStepper from './ChoiceAssistantMobileStepper.vue';
     import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
     import ChoiceAssistantRadio from './../ChoiceAssistantRadio.vue';
+import { questions } from '@/js/json/kem-questions';
     
     export default {
         components: {
@@ -111,7 +139,35 @@
                         question.selected_answers.push(answer_index)
                     }
                 }
-            }
+            },
+            gotoNextQuestion(){
+                if(this.current_question[0] == this.questions.length - 1 && this.current_question[1] == this.questions[this.current_question[0]].content.length - 1){
+                    return
+                }
+
+                // if last question in category go to next category
+                if(this.current_question[1] == this.questions[this.current_question[0]].content.length - 1){
+                    this.current_question[1] = 0
+                    this.current_question[0] += 1
+                } else {
+                    this.current_question[1] += 1
+                }
+            },
+            gotoPreviousQuestion(){
+                // if too far left ignore
+                if(this.current_question[0] == 0 && this.current_question[1] == 0){
+                    return
+                }
+
+                // if first question in category go to previous category
+                if(this.current_question[1] == 0){
+                    this.current_question[0] -= 1
+                    this.current_question[1] = this.questions[this.current_question[0]].content.length - 1
+                } else {
+                    this.current_question[1] -= 1
+                }
+            },
+            
         },
         computed: {
             current_question_object(){

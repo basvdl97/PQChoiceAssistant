@@ -113,6 +113,10 @@
                 this.current_question[0] += 1
             },
             gotoPreviousCategory(){
+                if(this.current_question[0] == 0 && this.current_question[1] == 0){
+                    return;
+                }
+
                 this.current_question[1] = 0
                 this.current_question[0] -= 1
             },
