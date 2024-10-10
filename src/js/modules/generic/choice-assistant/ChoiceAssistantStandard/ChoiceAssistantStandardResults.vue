@@ -78,6 +78,7 @@
 
 <script>
     export default {
+        name: 'ChoiceAssistantStandardResults',
         props: {
             title_text: {
                 type: String,

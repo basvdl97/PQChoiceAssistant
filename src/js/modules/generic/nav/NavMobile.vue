@@ -101,6 +101,7 @@ export default {
         },
         handleClickNavItem(menu_item) {
             this.$emit('handle-click-nav-item', menu_item);
+            this.is_menu_open = false;
         },
         handleClickOutside(event) {
             if (this.$refs.myElement2.contains(event.target)) { return; };
