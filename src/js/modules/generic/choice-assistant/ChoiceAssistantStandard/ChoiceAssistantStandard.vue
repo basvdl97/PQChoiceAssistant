@@ -14,6 +14,8 @@
                     :current_question="current_question"
 
                     @goto-results="tab = 'results'"
+
+                    class="mb-10"
                 />
 
                 <div @mouseenter="handleMouseEntersQuestion(i)" v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
