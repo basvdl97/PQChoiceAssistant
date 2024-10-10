@@ -4,7 +4,7 @@
         <h1 class="text-2xl font-medium text-secondary mb-12">{{ title_text }}</h1>
 
         <!-- Stepper -->
-        <ChoiceAssistantStepperMobile 
+        <ChoiceAssistantMobileStepper 
             :questions="questions"
             :current_question="current_question"
         />
@@ -70,12 +70,12 @@
 </template>
 
 <script>
-    import ChoiceAssistantStepperMobile from './ChoiceAssistantMobile/ChoiceAssistantStepperMobile.vue';
-    import ChoiceAssistantCheckbox from './ChoiceAssistantCheckbox.vue';
+    import ChoiceAssistantMobileStepper from './ChoiceAssistantMobileStepper.vue';
+    import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
     
     export default {
         components: {
-            ChoiceAssistantStepperMobile,
+            ChoiceAssistantMobileStepper,
             ChoiceAssistantCheckbox
         },
         props: {

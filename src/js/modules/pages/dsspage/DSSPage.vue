@@ -18,8 +18,8 @@
 <script>
     import { questions } from '@/js/json/dss-questions.js'
 
-    import ChoiceAssistantStandard from '@/js/modules/generic/choice-assistant/ChoiceAssistantStandard.vue'
-    import ChoiceAssistantMobile from '@/js/modules/generic/choice-assistant/ChoiceAssistantMobile.vue'
+    import ChoiceAssistantStandard from '@/js/modules/generic/choice-assistant/ChoiceAssistantStandard/ChoiceAssistantStandard.vue'
+    import ChoiceAssistantMobile from '@/js/modules/generic/choice-assistant/ChoiceAssistantMobile/ChoiceAssistantMobile.vue'
 
     export default {
         components: {

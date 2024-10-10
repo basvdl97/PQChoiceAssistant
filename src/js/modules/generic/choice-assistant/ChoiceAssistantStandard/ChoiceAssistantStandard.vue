@@ -9,7 +9,7 @@
                 </h1>
                 
                 <!-- paginator -->
-                <ChoiceAssistantStepperStandard
+                <ChoiceAssistantStandardStepper
                     :questions="questions"
                     :current_question="current_question"
                 />
@@ -85,23 +85,22 @@
             </div>
         </template> <!-- choice assistant questionair -->
         <template v-else-if="tab == 'results'">
-            <ChoiceAssistantResultsStandard :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
+            <ChoiceAssistantStandardResults :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
         </template>
     </div>
 </template>
 
 <script>
-    import ChoiceAssistantStepperStandard from './ChoiceAssistantStandard/ChoiceAssistantStepperStandard.vue'
-    import ChoiceAssistantCheckbox from './ChoiceAssistantCheckbox.vue';
-
-    import ChoiceAssistantResultsStandard from './ChoiceAssistantStandard/ChoiceAssistantResultsStandard.vue';
+    import ChoiceAssistantStandardStepper from './ChoiceAssistantStandardStepper.vue'
+    import ChoiceAssistantStandardResults from './ChoiceAssistantStandardResults.vue';
+    import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
 
     export default {
         components: {
-            ChoiceAssistantStepperStandard,
+            ChoiceAssistantStandardStepper,
             ChoiceAssistantCheckbox,
 
-            ChoiceAssistantResultsStandard
+            ChoiceAssistantStandardResults
         },
         props: {
             title_text: {
