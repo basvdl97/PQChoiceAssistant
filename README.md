@@ -33,7 +33,7 @@ npm run build
 >> Expects git to be an available cmd (aka git as part of env/path variables)
 
 ### Windows
-``sh
+```sh
 git add .
 git commit -m "update"
 git push
@@ -41,7 +41,7 @@ git push
 git add dist -f
 git commit -m "adding dist"
 git subtree push --prefix dist origin gh-pages
-``
+```
 
 ### Linux
 
