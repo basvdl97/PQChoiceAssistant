@@ -1,6 +1,6 @@
 export const questions = [
     {
-        "category": "Category 1 - Information Security",
+        "category": "Information Security",
         "content": [
             {
                 "question": {
@@ -16,6 +16,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -25,7 +26,9 @@ export const questions = [
                         "scores": {
                             "Kyber": 3,
                             "FrodoKEM": 4,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -36,7 +39,9 @@ export const questions = [
                         "scores": {
                             "Kyber": 3,
                             "FrodoKEM": 4,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -47,7 +52,9 @@ export const questions = [
                         "scores": {
                             "Kyber": 2,
                             "FrodoKEM": 3,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -58,7 +65,9 @@ export const questions = [
                         "scores": {
                             "Kyber": 2,
                             "FrodoKEM": 3,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -69,11 +78,12 @@ export const questions = [
                         "scores": {
                             "Kyber": 2,
                             "FrodoKEM": 3,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -89,6 +99,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -98,7 +109,9 @@ export const questions = [
                         "scores": {
                             "Kyber": 2,
                             "FrodoKEM": 3,
-                            "Classic McEliece": 5
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -109,11 +122,12 @@ export const questions = [
                         "scores": {
                             "Kyber": 3,
                             "FrodoKEM": 3,
-                            "Classic McEliece": 3
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     }
-                ],
-                "max_selectable_answers": 2
+                ]
             },
             {
                 "question": {
@@ -129,6 +143,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -169,8 +184,7 @@ export const questions = [
                             "BIKE": "BIKE-3"
                         }
                     }
-                ],
-                "max_selectable_answers": 3
+                ]
             },
             {
                 "question": {
@@ -186,6 +200,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -196,8 +211,8 @@ export const questions = [
                             "Kyber": 5,
                             "FrodoKEM": 3,
                             "Classic McEliece": 1,
-                            "HQC": 3,
-                            "BIKE": 3
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -209,17 +224,16 @@ export const questions = [
                             "Kyber": 1,
                             "FrodoKEM": 3,
                             "Classic McEliece": 5,
-                            "HQC": 3,
-                            "BIKE": 3
+                            "HQC": 1,
+                            "BIKE": 1
                         }
                     }
-                ],
-                "max_selectable_answers": 2
+                ]
             }
         ]
     },
     {
-        "category": "Category 2 - Performance vs Security",
+        "category": "Performance vs Security",
         "content": [
             {
                 "question": {
@@ -235,6 +249,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -301,8 +316,7 @@ export const questions = [
                             "BIKE": 0
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -318,6 +332,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -327,7 +342,7 @@ export const questions = [
                         "scores": {
                             "Kyber": 0,
                             "FrodoKEM": 4,
-                            "Classic McEliece": 5,
+                            "Classic McEliece": 0,
                             "HQC": 0,
                             "BIKE": 0
                         }
@@ -340,7 +355,7 @@ export const questions = [
                         "scores": {
                             "Kyber": 0,
                             "FrodoKEM": 4,
-                            "Classic McEliece": 4,
+                            "Classic McEliece": 0,
                             "HQC": 0,
                             "BIKE": 2
                         }
@@ -353,7 +368,7 @@ export const questions = [
                         "scores": {
                             "Kyber": 0,
                             "FrodoKEM": 1,
-                            "Classic McEliece": 0,
+                            "Classic McEliece": 1,
                             "HQC": 2,
                             "BIKE": 3
                         }
@@ -366,7 +381,7 @@ export const questions = [
                         "scores": {
                             "Kyber": 4,
                             "FrodoKEM": 0,
-                            "Classic McEliece": 0,
+                            "Classic McEliece": 4,
                             "HQC": 3,
                             "BIKE": 2
                         }
@@ -379,13 +394,12 @@ export const questions = [
                         "scores": {
                             "Kyber": 5,
                             "FrodoKEM": 0,
-                            "Classic McEliece": 0,
+                            "Classic McEliece": 4,
                             "HQC": 4,
                             "BIKE": 2
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -401,6 +415,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -411,8 +426,8 @@ export const questions = [
                             "Kyber": 0,
                             "FrodoKEM": 4,
                             "Classic McEliece": 5,
-                            "HQC": 4,
-                            "BIKE": 4
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -424,8 +439,8 @@ export const questions = [
                             "Kyber": 0,
                             "FrodoKEM": 3,
                             "Classic McEliece": 4,
-                            "HQC": 3,
-                            "BIKE": 3
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -450,8 +465,8 @@ export const questions = [
                             "Kyber": 4,
                             "FrodoKEM": 0,
                             "Classic McEliece": 0,
-                            "HQC": 0,
-                            "BIKE": 0
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -463,12 +478,11 @@ export const questions = [
                             "Kyber": 5,
                             "FrodoKEM": 0,
                             "Classic McEliece": 0,
-                            "HQC": 0,
-                            "BIKE": 0
+                            "HQC": 5,
+                            "BIKE": 5
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -484,6 +498,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -537,13 +552,12 @@ export const questions = [
                             "BIKE": 1
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             }
         ]
     },
     {
-        "category": "Category 3 - Standardisation",
+        "category": "Standardisation",
         "content": [
             {
                 "question": {
@@ -559,6 +573,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 3,
                 "answers": [
                     {
                         "text": {
@@ -569,8 +584,8 @@ export const questions = [
                             "Kyber": 5,
                             "FrodoKEM": 1,
                             "Classic McEliece": 3,
-                            "HQC": 2,
-                            "BIKE": 2
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -580,10 +595,10 @@ export const questions = [
                         },
                         "scores": {
                             "Kyber": 2,
-                            "FrodoKEM": 2,
-                            "Classic McEliece": 2,
-                            "HQC": 2,
-                            "BIKE": 2
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 4,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -594,7 +609,7 @@ export const questions = [
                         "scores": {
                             "Kyber": 3,
                             "FrodoKEM": 0,
-                            "Classic McEliece": 0,
+                            "Classic McEliece": 3,
                             "HQC": 0,
                             "BIKE": 0
                         }
@@ -602,7 +617,7 @@ export const questions = [
                     {
                         "text": {
                             "NL": "NTB",
-                            "EN": "<None selected>"
+                            "EN": "None of the above"
                         },
                         "scores": {
                             "Kyber": 5,
@@ -612,13 +627,12 @@ export const questions = [
                             "BIKE": 3
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             }
         ]
     },
     {
-        "category": "Category 4 - Hardware",
+        "category": "Hardware",
         "content": [
             {
                 "question": {
@@ -634,6 +648,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 5,
                 "answers": [
                     {
                         "text": {
@@ -703,7 +718,7 @@ export const questions = [
                     {
                         "text": {
                             "NL": "NTB",
-                            "EN": "<None selected>"
+                            "EN": "None of the above"
                         },
                         "scores": {
                             "Kyber": 4,
@@ -713,8 +728,7 @@ export const questions = [
                             "BIKE": 3
                         }
                     }
-                ],
-                "max_selectable_answers": 6
+                ]
             },
             {
                 "question": {
@@ -730,6 +744,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -796,8 +811,7 @@ export const questions = [
                             "BIKE": 2
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -813,6 +827,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 2,
                 "answers": [
                     {
                         "text": {
@@ -843,7 +858,7 @@ export const questions = [
                     {
                         "text": {
                             "NL": "NTB",
-                            "EN": "<None selected>"
+                            "EN": "None of the above"
                         },
                         "scores": {
                             "Kyber": 4,
@@ -853,8 +868,7 @@ export const questions = [
                             "BIKE": 3
                         }
                     }
-                ],
-                "max_selectable_answers": 3
+                ]
             },
             {
                 "question": {
@@ -870,6 +884,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -885,13 +900,12 @@ export const questions = [
                         },
                         "scores": {}
                     }
-                ],
-                "max_selectable_answers": 2
+                ]
             }
         ]
     },
     {
-        "category": "Category 5 - Storage",
+        "category": "Storage",
         "content": [
             {
                 "question": {
@@ -907,6 +921,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -973,8 +988,7 @@ export const questions = [
                             "BIKE": 4
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -990,6 +1004,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -1043,8 +1058,7 @@ export const questions = [
                             "BIKE": 0
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             },
             {
                 "question": {
@@ -1060,6 +1074,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -1113,13 +1128,12 @@ export const questions = [
                             "BIKE": 0
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             }
         ]
     },
     {
-        "category": "Category 6 - Communication",
+        "category": "Communication",
         "content": [
             {
                 "question": {
@@ -1135,6 +1149,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -1201,8 +1216,7 @@ export const questions = [
                             "BIKE": 4
                         }
                     }
-                ],
-                "max_selectable_answers": 5
+                ]
             },
             {
                 "question": {
@@ -1218,6 +1232,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -1271,8 +1286,7 @@ export const questions = [
                             "BIKE": 0
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             },
             {
                 "question": {
@@ -1288,6 +1302,7 @@ export const questions = [
                     "NL": "NTB",
                     "EN": "TBD"
                 },
+                "max_selectable_answers": 1,
                 "answers": [
                     {
                         "text": {
@@ -1341,8 +1356,7 @@ export const questions = [
                             "BIKE": 0
                         }
                     }
-                ],
-                "max_selectable_answers": 4
+                ]
             }
         ]
     }

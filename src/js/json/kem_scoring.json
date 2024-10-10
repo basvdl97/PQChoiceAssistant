@@ -1,16 +1,16 @@
-export const questions = [
+[
     {
         "category": "Information Security",
         "content": [
             {
                 "question": {
                     "NL": "NTB",
-                    "EN": "For how many years does the data you are validating have to stay verified?"
+                    "EN": "For how many years does the data you are protecting have to stay secure?"
                 },
                 "expert_level": false,
                 "description": {
                     "NL": "NTB",
-                    "EN": "If your organization is dealing with information that should remain validated for an extended period of time, it may be beneficial to invest in a more conservative post-quantum cryptographic scheme. This ensures that you minimize the chance of the scheme being vulnerable in the future and thus increasing the assurance that the data will remain verified for its entire lifespan."
+                    "EN": "If your organization is dealing with information that should remain secure for an extended period of time, it may be beneficial to invest in a more conservative post-quantum cryptographic scheme. This ensures that you minimize the chance of the scheme being vulnerable in the future and thus increasing the assurance that the data will remain secure for its entire lifespan."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -24,10 +24,11 @@ export const questions = [
                             "EN": "Less than 1 year"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 3,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 5,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -36,10 +37,11 @@ export const questions = [
                             "EN": "1 - 5 years"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 3,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 5,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -48,10 +50,11 @@ export const questions = [
                             "EN": "6 - 12 years"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 2,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 2,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -60,10 +63,11 @@ export const questions = [
                             "EN": "12 - 30 years"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 2,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 2,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -72,10 +76,11 @@ export const questions = [
                             "EN": "More than 30 years"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 2,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 2,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     }
                 ]
@@ -102,10 +107,11 @@ export const questions = [
                             "EN": "Yes"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 3,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 2,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -114,10 +120,11 @@ export const questions = [
                             "EN": "No"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 3,
-                            "XMSS": 3
+                            "Kyber": 3,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     }
                 ]
@@ -144,10 +151,11 @@ export const questions = [
                             "EN": "128 bits - NIST level 1 - 3072 bit RSA keys - 256 bit ECC keys"
                         },
                         "scores": {
-                            "Dilithium": "Dilithium2",
-                            "Falcon": "Falcon-512",
-                            "Sphincs+": "Sphincs+-128",
-                            "XMSS": "XMSS-256"
+                            "Kyber": "Kyber-512",
+                            "FrodoKEM": "FrodoKEM-640",
+                            "Classic McEliece": "mceliece348864",
+                            "HQC": "hqc-128",
+                            "BIKE": "BIKE-1"
                         }
                     },
                     {
@@ -156,9 +164,11 @@ export const questions = [
                             "EN": "192 bits - NIST level 3 - 7680 bit RSA keys - 384 bit ECC keys"
                         },
                         "scores": {
-                            "Dilithium": "Dilithium3",
-                            "Sphincs+": "Sphincs+-192",
-                            "XMSS": "XMSS-256"
+                            "Kyber": "Kyber-768",
+                            "FrodoKEM": "FrodoKEM-976",
+                            "Classic McEliece": "mceliece460896",
+                            "HQC": "hqc-192",
+                            "BIKE": "BIKE-2"
                         }
                     },
                     {
@@ -167,10 +177,11 @@ export const questions = [
                             "EN": "256 bits - NIST level 5 - 15360 bit RSA keys - 521 bit ECC keys"
                         },
                         "scores": {
-                            "Dilithium": "Dilithium5",
-                            "Falcon": "Falcon-1024",
-                            "Sphincs+": "Sphincs+-256",
-                            "XMSS": "XMSS-256"
+                            "Kyber": "Kyber-1024",
+                            "FrodoKEM": "FrodoKEM-1344",
+                            "Classic McEliece": "mceliece6688128",
+                            "HQC": "hqc-256",
+                            "BIKE": "BIKE-3"
                         }
                     }
                 ]
@@ -197,10 +208,11 @@ export const questions = [
                             "EN": "Yes"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 1,
-                            "XMSS": 1
+                            "Kyber": 5,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 1,
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -209,10 +221,11 @@ export const questions = [
                             "EN": "No"
                         },
                         "scores": {
-                            "Dilithium": 1,
-                            "Falcon": 1,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 1,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 1,
+                            "BIKE": 1
                         }
                     }
                 ]
@@ -244,10 +257,11 @@ export const questions = [
                             "EN": "Completely agree"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 0,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -256,10 +270,11 @@ export const questions = [
                             "EN": "Agree"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 4,
-                            "XMSS": 4
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 4,
+                            "HQC": 0,
+                            "BIKE": 2
                         }
                     },
                     {
@@ -268,10 +283,11 @@ export const questions = [
                             "EN": "Neutral"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 0,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 1
                         }
                     },
                     {
@@ -280,10 +296,11 @@ export const questions = [
                             "EN": "Disagree"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 4,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 4,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -292,10 +309,11 @@ export const questions = [
                             "EN": "Completely disagree"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 5,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 4,
+                            "BIKE": 0
                         }
                     }
                 ]
@@ -321,35 +339,65 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Completely agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Neutral"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 1,
+                            "HQC": 2,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 4,
+                            "HQC": 3,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Completely disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 4,
+                            "HQC": 4,
+                            "BIKE": 2
+                        }
                     }
                 ]
             },
@@ -375,10 +423,11 @@ export const questions = [
                             "EN": "Completely agree"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 0,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -387,10 +436,11 @@ export const questions = [
                             "EN": "Agree"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 4,
-                            "XMSS": 4
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 4,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -399,10 +449,11 @@ export const questions = [
                             "EN": "Neutral"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 0,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -411,10 +462,11 @@ export const questions = [
                             "EN": "Disagree"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 4,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 4,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -423,10 +475,11 @@ export const questions = [
                             "EN": "Completely disagree"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 5,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 5,
+                            "BIKE": 5
                         }
                     }
                 ]
@@ -439,7 +492,7 @@ export const questions = [
                 "expert_level": true,
                 "description": {
                     "NL": "NTB",
-                    "EN": "If your application has no strict time constraints in key generation, signing and verifying, it can make sense to go for a less efficient algorithm for the benefit of more maturity."
+                    "EN": "If your application has no strict time constraints in key generation, encryption and decryption it can make sense to go for a less efficient algorithm for the benefit of more maturity."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -452,28 +505,52 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Less than 100 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 4,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "100 - 500 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "500 - 1000 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 1,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 1,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "More than 1000 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 5,
+                            "HQC": 1,
+                            "BIKE": 1
+                        }
                     }
                 ]
             }
@@ -504,10 +581,11 @@ export const questions = [
                             "EN": "NIST"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 3,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -516,10 +594,11 @@ export const questions = [
                             "EN": "ISO"
                         },
                         "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 2,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 4,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -528,10 +607,11 @@ export const questions = [
                             "EN": "IETF"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 0,
-                            "Sphincs+": 1,
-                            "XMSS": 5
+                            "Kyber": 3,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 3,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -540,10 +620,11 @@ export const questions = [
                             "EN": "None of the above"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 3,
-                            "Sphincs+": 4,
-                            "XMSS": 4
+                            "Kyber": 5,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     }
                 ]
@@ -575,10 +656,11 @@ export const questions = [
                             "EN": "Laptop (or higher performance)"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 5,
+                            "FrodoKEM": 5,
+                            "Classic McEliece": 5,
+                            "HQC": 5,
+                            "BIKE": 5
                         }
                     },
                     {
@@ -587,10 +669,11 @@ export const questions = [
                             "EN": "Smart phone"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 5,
-                            "XMSS": 4
+                            "Kyber": 5,
+                            "FrodoKEM": 5,
+                            "Classic McEliece": 5,
+                            "HQC": 5,
+                            "BIKE": 5
                         }
                     },
                     {
@@ -599,10 +682,11 @@ export const questions = [
                             "EN": "IoT device"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 3,
-                            "Sphincs+": 4,
-                            "XMSS": 3
+                            "Kyber": 4,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -611,10 +695,11 @@ export const questions = [
                             "EN": "Smart card"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 3,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 1
                         }
                     },
                     {
@@ -623,10 +708,11 @@ export const questions = [
                             "EN": "Sensors"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 3,
-                            "Sphincs+": 1,
-                            "XMSS": 0
+                            "Kyber": 2,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 1,
+                            "BIKE": 0
                         }
                     },
                     {
@@ -635,10 +721,11 @@ export const questions = [
                             "EN": "None of the above"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 2,
-                            "XMSS": 0
+                            "Kyber": 4,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 4,
+                            "BIKE": 3
                         }
                     }
                 ]
@@ -665,10 +752,11 @@ export const questions = [
                             "EN": "Completely agree"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 5,
+                            "FrodoKEM": 5,
+                            "Classic McEliece": 5,
+                            "HQC": 5,
+                            "BIKE": 5
                         }
                     },
                     {
@@ -677,10 +765,11 @@ export const questions = [
                             "EN": "Agree"
                         },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 4,
-                            "XMSS": 3
+                            "Kyber": 5,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 4,
+                            "HQC": 4,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -689,10 +778,11 @@ export const questions = [
                             "EN": "Neutral"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 4,
-                            "Sphincs+": 3,
-                            "XMSS": 2
+                            "Kyber": 4,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -701,10 +791,11 @@ export const questions = [
                             "EN": "Disagree"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 2,
-                            "XMSS": 1
+                            "Kyber": 4,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -713,10 +804,11 @@ export const questions = [
                             "EN": "Completely disagree"
                         },
                         "scores": {
-                            "Dilithium": 2,
-                            "Falcon": 2,
-                            "Sphincs+": 1,
-                            "XMSS": 1
+                            "Kyber": 3,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 2,
+                            "HQC": 2,
+                            "BIKE": 2
                         }
                     }
                 ]
@@ -743,10 +835,11 @@ export const questions = [
                             "EN": "Hash function calls"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 5,
-                            "XMSS": 5
+                            "Kyber": 4,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 4,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     },
                     {
@@ -755,10 +848,11 @@ export const questions = [
                             "EN": "Polynomial operations"
                         },
                         "scores": {
-                            "Dilithium": 4,
-                            "Falcon": 4,
-                            "Sphincs+": 0,
-                            "XMSS": 0
+                            "Kyber": 5,
+                            "FrodoKEM": 4,
+                            "Classic McEliece": 4,
+                            "HQC": 3,
+                            "BIKE": 4
                         }
                     },
                     {
@@ -767,10 +861,11 @@ export const questions = [
                             "EN": "None of the above"
                         },
                         "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 3,
-                            "Sphincs+": 1,
-                            "XMSS": 1
+                            "Kyber": 4,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 3,
+                            "HQC": 3,
+                            "BIKE": 3
                         }
                     }
                 ]
@@ -796,24 +891,14 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Yes"
                         },
-                        "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 5,
-                            "Sphincs+": 3,
-                            "XMSS": 3
-                        }
+                        "scores": {}
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "No"
                         },
-                        "scores": {
-                            "Dilithium": 3,
-                            "Falcon": 0,
-                            "Sphincs+": 3,
-                            "XMSS": 3
-                        }
+                        "scores": {}
                     }
                 ]
             }
@@ -825,7 +910,7 @@ export const questions = [
             {
                 "question": {
                     "NL": "NTB",
-                    "EN": "My use case can afford larger cryptographic keys and signatures than currently used"
+                    "EN": "My use case can afford larger cryptographic keys and ciphertexts than currently used"
                 },
                 "expert_level": false,
                 "description": {
@@ -843,35 +928,65 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Completely agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 1,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Neutral"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 1,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Completely disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 4
+                        }
                     }
                 ]
             },
@@ -883,7 +998,7 @@ export const questions = [
                 "expert_level": true,
                 "description": {
                     "NL": "NTB",
-                    "EN": "The signatures will generally be much larger than the ones generated by the current algorithms. The private key is also needed while signing a message, as well as the public key during verification. Therefore the signature and either of the key need to fit into your device's RAM simultaneously."
+                    "EN": "The ciphertext will generally be much larger than the ones generated by the current algorithms. The public key is also needed while encrypting a message, as well as the private key during decryption Therefore the ciphertext and either of the key need to fit into your device's RAM simultaneously."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -896,28 +1011,52 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Less than 10 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "10 - 50 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "50 - 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 1,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "More than 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 1,
+                            "BIKE": 0
+                        }
                     }
                 ]
             },
@@ -942,28 +1081,52 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Less than 10 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 4,
+                            "BIKE": 4
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "10 - 50 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "50 - 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "More than 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     }
                 ]
             }
@@ -975,12 +1138,12 @@ export const questions = [
             {
                 "question": {
                     "NL": "NTB",
-                    "EN": "My use case can afford larger signatures than currently used"
+                    "EN": "My use case can afford larger ciphertexts than currently used"
                 },
                 "expert_level": false,
                 "description": {
                     "NL": "NTB",
-                    "EN": "The design of the new cryptographic schemes often makes them slower than the currently deployed cryptographic schemes like RSA and ECC and will use larger cryptographic keys. The new schemes may become a bottleneck for the application, both in resources and time. The application will have to handle larger cryptographic signatures which have to be transmitted."
+                    "EN": "The design of the new cryptographic schemes often makes them slower than the currently deployed cryptographic schemes like RSA and ECC and will use larger cryptographic keys. The new schemes may become a bottleneck for the application, both in resources and time. The application will have to handle larger cryptographic ciphertexts which have to be transmitted."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -993,35 +1156,65 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Completely agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Agree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 1,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Neutral"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 1,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "Completely disagree"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 4
+                        }
                     }
                 ]
             },
@@ -1033,7 +1226,7 @@ export const questions = [
                 "expert_level": true,
                 "description": {
                     "NL": "NTB",
-                    "EN": "This question is specifically about the communication bandwidth. Some schemes have larger signatures than others, so these will be less suitable if your communication link is constrained on bandwidth."
+                    "EN": "This question is specifically about the communication bandwidth. Some schemes have larger ciphertexts than others, so these will be less suitable if your communication link is constrained on bandwidth."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -1046,28 +1239,52 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Less than 10 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 0,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "10 - 50 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "50 - 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 1,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 2,
+                            "BIKE": 2
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "More than 100 kB"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 5,
+                            "HQC": 1,
+                            "BIKE": 0
+                        }
                     }
                 ]
             },
@@ -1079,7 +1296,7 @@ export const questions = [
                 "expert_level": true,
                 "description": {
                     "NL": "NTB",
-                    "EN": "This question is specifically about the communication time complexity. Some schemes have more complex signing or verification algorithms, so these will be less suitable if your application has strict timing requirements."
+                    "EN": "This question is specifically about the communication time complexity. Some schemes have more complex encryption or decryption algorithms, so these will be less suitable if your application has strict timing requirements."
                 },
                 "additional_information": {
                     "NL": "NTB",
@@ -1092,187 +1309,51 @@ export const questions = [
                             "NL": "NTB",
                             "EN": "Less than 100 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 5,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 0,
+                            "HQC": 4,
+                            "BIKE": 4
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "100 - 500 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 4,
+                            "FrodoKEM": 2,
+                            "Classic McEliece": 0,
+                            "HQC": 3,
+                            "BIKE": 3
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "500 - 1000 ms"
                         },
-                        "scores": {}
+                        "scores": {
+                            "Kyber": 0,
+                            "FrodoKEM": 3,
+                            "Classic McEliece": 0,
+                            "HQC": 0,
+                            "BIKE": 0
+                        }
                     },
                     {
                         "text": {
                             "NL": "NTB",
                             "EN": "More than 1000 ms"
                         },
-                        "scores": {}
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "category": "Attacks",
-        "content": [
-            {
-                "question": {
-                    "NL": "NTB",
-                    "EN": "Do you need to mitigate the risk of attackers potentially getting physical access to the device?"
-                },
-                "expert_level": false,
-                "description": {
-                    "NL": "NTB",
-                    "EN": "Some schemes are easier to protect against side-channel attacks than others. In a side-channel attack, the attacker makes use of physical properties of a computation (power usage, fluctuations in computation time) to recover partial information on the secret. However, most of these attacks are only a concern when the attacker has a means to physically analyse the device in your application. The fact that an attacker has a means to access the device running the cryptographic operations is not by itself a security concern. However, it may be critical for your application to make sure that the secret key is not leaked by the device."
-                },
-                "additional_information": {
-                    "NL": "NTB",
-                    "EN": "TBD"
-                },
-                "max_selectable_answers": 1,
-                "answers": [
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "Yes"
-                        },
                         "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 1,
-                            "Sphincs+": 5,
-                            "XMSS": 5
-                        }
-                    },
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "No"
-                        },
-                        "scores": {
-                            "Dilithium": 0,
-                            "Falcon": 0,
-                            "Sphincs+": 0,
-                            "XMSS": 0
-                        }
-                    }
-                ]
-            },
-            {
-                "question": {
-                    "NL": "NTB",
-                    "EN": "(Follow-up) What functionality do you need to protect?"
-                },
-                "expert_level": true,
-                "description": {
-                    "NL": "NTB",
-                    "EN": "The design of the operations for some cryptographic schemes makes it hard to implement side-channel countermeasures for some of their functionalities. It is therefore helpful to understand which operations in your application need to be fortified."
-                },
-                "additional_information": {
-                    "NL": "NTB",
-                    "EN": "TBD"
-                },
-                "max_selectable_answers": 3,
-                "answers": [
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "Key Generation"
-                        },
-                        "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 1,
-                            "Sphincs+": 5,
-                            "XMSS": 5
-                        }
-                    },
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "Signing"
-                        },
-                        "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 1,
-                            "Sphincs+": 5,
-                            "XMSS": 5
-                        }
-                    },
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "Verification"
-                        },
-                        "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 5,
-                            "Sphincs+": 5,
-                            "XMSS": 5
-                        }
-                    },
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "None of the above"
-                        },
-                        "scores": {
-                            "Dilithium": 5,
-                            "Falcon": 1,
-                            "Sphincs+": 5,
-                            "XMSS": 5
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "category": "Statefulness",
-        "content": [
-            {
-                "question": {
-                    "NL": "NTB",
-                    "EN": "My use case requires only a limited number of signatures, and is able to securely handle the cryptographic state"
-                },
-                "expert_level": false,
-                "description": {
-                    "NL": "NTB",
-                    "EN": "A specific class of signature schemes, known as stateful hash-based signature schemes, combines high security guarantees with better efficiency than its stateless counterpart. The limitation in this case, is that the scheme can only sign a limited amount of messages (typically between 2^10 and 2^20 signatures) and it requires a different key for every signature. Applications like secure booting are ideal for these schemes, but in general it is hard to adopt stateful hash-based schemes due to the difficulty in handling the signing keys."
-                },
-                "additional_information": {
-                    "NL": "NTB",
-                    "EN": "TBD"
-                },
-                "max_selectable_answers": 1,
-                "answers": [
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "Yes"
-                        },
-                        "scores": {
-                            "Dilithium": "-",
-                            "Falcon": "-",
-                            "Sphincs+": "-",
-                            "XMSS": "flag = 1"
-                        }
-                    },
-                    {
-                        "text": {
-                            "NL": "NTB",
-                            "EN": "No"
-                        },
-                        "scores": {
-                            "Dilithium": "-",
-                            "Falcon": "-",
-                            "Sphincs+": "-",
-                            "XMSS": "flag = 0"
+                            "Kyber": 0,
+                            "FrodoKEM": 1,
+                            "Classic McEliece": 5,
+                            "HQC": 0,
+                            "BIKE": 0
                         }
                     }
                 ]
