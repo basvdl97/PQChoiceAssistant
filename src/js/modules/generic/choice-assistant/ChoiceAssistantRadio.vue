@@ -1,6 +1,6 @@
 <template>
     <div 
-        class="w-5 h-5 min-w-5 min-h-5 max-w-5 max-h-5 border bg-white flex items-center justify-center cursor-pointer" 
+        class="w-5 h-5 min-w-5 min-h-5 max-w-5 max-h-5 border bg-white rounded-full flex items-center justify-center cursor-pointer" 
         :class="{
             ' border-secondary': checked,
             ' border-gray-200': !checked,
@@ -9,7 +9,7 @@
         @click="handleClick"
     >
         <!-- inner circle that indicates selection -->
-        <div v-if="checked" class="bg-secondary w-3 h-3"/>
+        <div v-if="checked" class="bg-secondary rounded-full w-3 h-3"/>
     </div>
 </template>
 

@@ -27,3 +27,24 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+# Publish to pages
+>> Expects git to be an available cmd (aka git as part of env/path variables)
+
+### Windows
+```sh
+git add .
+git commit -m "update"
+git push
+
+git add dist -f
+git commit -m "adding dist"
+git subtree push --prefix dist origin gh-pages
+```
+
+### Linux
+
+##### Temp solution
+    1. Change the package.json post build command to use the cp (linux) command.
+    2. Run the same code as on windows.

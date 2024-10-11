@@ -9,42 +9,14 @@
                 </h1>
                 
                 <!-- paginator -->
-                <ChoiceAssistantStepperStandard
+                <ChoiceAssistantStandardStepper
                     :questions="questions"
                     :current_question="current_question"
+
+                    @goto-results="tab = 'results'"
+
+                    class="mb-10"
                 />
-
-                <div class="mt-8 mb-2 w-full flex justify-between">
-                    <!-- previous question button -->
-                    <button
-                        @click="gotoPreviousCategory"
-                        :disabled="current_question[0] == 0"
-                        class="px-4 py-2 bg-primary text-white font-semibold rounded-md"
-                        :class="{ 'cursor-not-allowed opacity-50': current_question[0] == 0 }"
-                    >
-                        Previous Category
-                    </button>
-
-                    <!-- next question button -->
-                    <template v-if="current_question[0] == questions.length - 1">
-                        <button
-                            @click="tab = 'results'"
-                            class="px-4 py-2 bg-secondary text-white font-semibold rounded-md"
-                        >
-                            Results
-                        </button>
-                    </template>
-                    <template v-else>
-                        <button
-                            @click="gotoNextCategory"
-                            :disabled="current_question[0] == questions.length - 1"
-                            class="px-4 py-2 bg-secondary text-white font-semibold rounded-md"
-                            :class="{ 'cursor-not-allowed opacity-50': current_question[0] == questions.length - 1 }"
-                        >
-                            Next Category
-                        </button>
-                    </template>
-                </div>
 
                 <div @mouseenter="handleMouseEntersQuestion(i)" v-for="question, i in questions[current_question[0]].content" class="w-full flex gap-4 mb-4  relative">
                     <!-- question & answers -->
@@ -65,7 +37,8 @@
                         <!-- Answer choices -->
                         <div class="w-full flex flex-col gap-1 mt-4">
                             <div v-for="answer, k in question.answers" :key="k" class="flex gap-4 items-center">
-                                <ChoiceAssistantCheckbox :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
+                                <ChoiceAssistantRadio v-if="question.max_selectable_answers <= 1" :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
+                                <ChoiceAssistantCheckbox v-else :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
                                 <label :for="`question-${i}-answer-${k}`" class="text-black font-semibold text-sm cursor-pointer" @click="handleSelectAnswer(question, k)">
                                     {{ answer.text.EN }}
                                 </label>
@@ -85,23 +58,24 @@
             </div>
         </template> <!-- choice assistant questionair -->
         <template v-else-if="tab == 'results'">
-            <ChoiceAssistantResultsStandard :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
+            <ChoiceAssistantStandardResults :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
         </template>
     </div>
 </template>
 
 <script>
-    import ChoiceAssistantStepperStandard from './ChoiceAssistantStandard/ChoiceAssistantStepperStandard.vue'
-    import ChoiceAssistantCheckbox from './ChoiceAssistantCheckbox.vue';
-
-    import ChoiceAssistantResultsStandard from './ChoiceAssistantStandard/ChoiceAssistantResultsStandard.vue';
+    import ChoiceAssistantStandardStepper from './ChoiceAssistantStandardStepper.vue'
+    import ChoiceAssistantStandardResults from './ChoiceAssistantStandardResults.vue';
+    import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
+    import ChoiceAssistantRadio from './../ChoiceAssistantRadio.vue';
 
     export default {
         components: {
-            ChoiceAssistantStepperStandard,
+            ChoiceAssistantStandardStepper,
             ChoiceAssistantCheckbox,
+            ChoiceAssistantRadio,
 
-            ChoiceAssistantResultsStandard
+            ChoiceAssistantStandardResults
         },
         props: {
             title_text: {
@@ -123,22 +97,18 @@
             }
         },
         methods: {
-            gotoNextCategory(){
-                this.current_question[1] = 0
-                this.current_question[0] += 1
-            },
-            gotoPreviousCategory(){
-                this.current_question[1] = 0
-                this.current_question[0] -= 1
-            },
             handleMouseEntersQuestion(question_in_category_index){
                 this.current_question[1] = question_in_category_index;
             },
             handleSelectAnswer(question, answer_index){
-                if(question.selected_answers.includes(answer_index)){
-                    question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
-                }else{
-                    question.selected_answers.push(answer_index)
+                if(question.max_selectable_answers <= 1){
+                    question.selected_answers = [answer_index]
+                } else { 
+                    if(question.selected_answers.includes(answer_index)){
+                        question.selected_answers = question.selected_answers.filter((index) => index != answer_index)
+                    }else{
+                        question.selected_answers.push(answer_index)
+                    }
                 }
             }
         }
