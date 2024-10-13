@@ -46,7 +46,8 @@
             initSelectedAnswers(){
                 this.questions.forEach((category, i) => {
                     category.content.forEach((question, j) => {
-                        question.selected_answers = []
+                        question.selected_answers    = []
+                        question.marked_as_important = false
                     });
                 });
 

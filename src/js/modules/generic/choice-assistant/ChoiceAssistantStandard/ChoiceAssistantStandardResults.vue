@@ -27,13 +27,18 @@
                         <!-- checkbox & expert symbol -->
                         <div class="flex flex-col items-center">
                             <!-- checkbox -->
-                            <ChoiceAssistantCheckbox />
+                            <ChoiceAssistantCheckbox
+                                :checked="questions[answered_question.index[0]].content[answered_question.index[1]].marked_as_important"
+                                @handle-click="questions[answered_question.index[0]].content[answered_question.index[1]].marked_as_important = !questions[answered_question.index[0]].content[answered_question.index[1]].marked_as_important" />
 
                             <!-- expert symbol if needed -->
                             <div class="text-primary">
-                                <svg v-if="answered_question.expert_level" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="mt-2 bi bi-mortarboard" viewBox="0 0 16 16">
-                                    <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z"/>
-                                    <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
+                                <svg v-if="answered_question.expert_level" xmlns="http://www.w3.org/2000/svg" width="12"
+                                    height="12" fill="currentColor" class="mt-2 bi bi-mortarboard" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917zM8 8.46 1.758 5.965 8 3.052l6.242 2.913z" />
+                                    <path
+                                        d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z" />
                                 </svg>
                             </div>
                         </div>
@@ -80,10 +85,10 @@
                         <div class="text-primary font-bold text-lg w-32 max-w-32 min-w-32 truncate">{{ scoring_key }}
                         </div>
                         <div class=" pl-2 pr-2 text-right font-semibold text-lg w-12 max-w-12 min-w-12 truncate">
-                            {{ scores[scoring_key] }}</div>
+                            {{ scores[scoring_key].toFixed(0) }}</div>
                         <div class="flex-1 flex items-center">
                             <!-- filled bar -->
-                            <div class="bg-primary h-7" :style="`width: ${scores[scoring_key]}%;`" />
+                            <div class="bg-primary h-7 transition-all duration-300 ease-in-out" :style="`width: ${scores[scoring_key]}%;`" />
 
                             <!-- rest of bar as line -->
                             <div class="bg-primary h-[2px] flex-1" />
@@ -143,13 +148,12 @@ export default {
                 return scores;
             }
 
-            // iterate of all possible answer scores, over each key, if the key is has a number as value
-            // then set the scores[key] = 0; (so that unscored results also show).
-            this.questions.forEach((category, i) => {
-                category.content.forEach((question, j) => {
+            // Initialize scores object with all possible algorithms as keys.
+            this.questions.forEach((category) => {
+                category.content.forEach((question) => {
                     question.answers.forEach((answer) => {
                         for (const [key, value] of Object.entries(answer.scores)) {
-                            if (!scores[key] && !isNaN(value)) {
+                            if (!scores.hasOwnProperty(key) && !isNaN(value)) {
                                 scores[key] = 0;
                             }
                         }
@@ -157,33 +161,62 @@ export default {
                 });
             });
 
-            // go over all question selected answers, and count up the score.
-            this.questions.forEach((category, i) => {
-                category.content.forEach((question, j) => {
-                    question.selected_answers.forEach((answer_index) => {
-                        const scores_for_answer = question.answers[answer_index].scores;
+            let n = 0; // Number of answered questions.
+            let k = 0; // Number of questions marked as important.
 
-                        // iterate over all keys in scores_for_answer
-                        for (const [key, value] of Object.entries(scores_for_answer)) {
-                            // if value is NaN, ignore it (needs is nan check)
-                            if (isNaN(value)) {
-                                continue;
-                            }
+            // Initialize total scores for each algorithm.
+            let total_scores = {};
+            for (let key in scores) {
+                total_scores[key] = 0;
+            }
 
-                            if (!scores[key]) {
-                                scores[key] = 0;
-                            }
+            this.questions.forEach((category) => {
+                category.content.forEach((question) => {
+                    if (question.selected_answers && question.selected_answers.length > 0) {
+                        n += 1;
 
-                            scores[key] += value;
-
-                            scores[key] = Math.min(100, scores[key]);
+                        // Check if the question is marked as important.
+                        let isImportant = question.marked_as_important || false; // Adjust property name if different.
+                        if (isImportant) {
+                            k += 1;
                         }
-                    });
+
+                        question.selected_answers.forEach((answer_index) => {
+                            const scores_for_answer = question.answers[answer_index].scores;
+
+                            // Multiplier for important questions.
+                            let multiplier = isImportant ? 2 : 1;
+
+                            // Sum up the scores for each algorithm.
+                            for (const [key, value] of Object.entries(scores_for_answer)) {
+                                if (isNaN(value)) {
+                                    continue;
+                                }
+                                total_scores[key] += value * multiplier;
+                            }
+                        });
+                    }
                 });
             });
+
+            // Calculate the final score for each algorithm.
+            let denominator = 5 * (n + k);
+
+            for (let key in scores) {
+                let T_alg = total_scores[key];
+
+                if (denominator > 0) {
+                    scores[key] = (100 * T_alg) / denominator;
+                    // Ensure the score is between 0 and 100.
+                    scores[key] = Math.max(0, Math.min(100, scores[key]));
+                } else {
+                    scores[key] = 0;
+                }
+            }
 
             return scores;
         },
+
         answered_questions() {
             let answered_questions = [];
 
@@ -195,6 +228,7 @@ export default {
                 category.content.forEach((question, j) => {
                     if (question.selected_answers.length > 0) {
                         answered_questions.push({
+                            index: [i, j],
                             expert_level: question.expert_level,
                             question: question.question.EN,
                             answers: question.selected_answers.map((answer_index) => {
