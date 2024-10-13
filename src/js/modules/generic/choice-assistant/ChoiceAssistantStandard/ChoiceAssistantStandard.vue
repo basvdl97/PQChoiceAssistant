@@ -58,7 +58,7 @@
             </div>
         </template> <!-- choice assistant questionair -->
         <template v-else-if="tab == 'results'">
-            <ChoiceAssistantStandardResults :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'"/>
+            <ChoiceAssistantStandardResults :title_text="title_text" :questions="questions" @handle-back-to-questions="tab='choice-assistant'" :scores="scores" :answered_questions="answered_questions"/>
         </template>
     </div>
 </template>
@@ -90,6 +90,15 @@
                 type: Array,
                 required: true,
             },
+
+            scores: {
+                type: Object,
+                required: false,
+            },
+            answered_questions: {
+                type: Array,
+                required: false,
+            }
         },
         data(){
             return {

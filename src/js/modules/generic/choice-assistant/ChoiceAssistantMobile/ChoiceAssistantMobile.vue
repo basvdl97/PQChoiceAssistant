@@ -97,18 +97,32 @@
             </div>
         </div>
     </template>
+    <template v-else-if="tab=='importance'">
+        <ChoiceAssistantMobileImportance
+            :title_text="title_text"
+            :questions="questions"
+
+            :answered_questions="answered_questions"
+
+            @handle-back-to-questions="tab='choice-assistant'"
+            @handle-to-results="tab='results'"
+        />
+    </template>
     <template v-else-if="tab == 'results'">
         <ChoiceAssistantMobileResults 
             :title_text="title_text"
             :questions="questions"
 
-            @handle-back-to-questions="tab='choice-assistant'"
+            :scores="scores"
+
+            @handle-back-to-importance="tab='importance'"
         />
     </template>
 </template>
 
 <script>
     import ChoiceAssistantMobileStepper from './ChoiceAssistantMobileStepper.vue';
+    import ChoiceAssistantMobileImportance from './ChoiceAssistantMobileImportance.vue';
     import ChoiceAssistantMobileResults from './ChoiceAssistantMobileResults.vue';
     import ChoiceAssistantCheckbox from './../ChoiceAssistantCheckbox.vue';
     import ChoiceAssistantRadio from './../ChoiceAssistantRadio.vue';
@@ -117,6 +131,7 @@ import { questions } from '@/js/json/kem-questions';
     export default {
         components: {
             ChoiceAssistantMobileStepper,
+            ChoiceAssistantMobileImportance,
             ChoiceAssistantMobileResults,
             ChoiceAssistantCheckbox,
             ChoiceAssistantRadio
@@ -134,11 +149,20 @@ import { questions } from '@/js/json/kem-questions';
                 type: Array,
                 required: true,
             },
+
+            scores: {
+                type: Object,
+                required: false,
+            },
+            answered_questions: {
+                type: Array,
+                required: false,
+            }
         },
         data(){
             return {
                 info_expanded: false,
-                tab: 'choice-assistant', // choice-assistant, preferences, results
+                tab: 'choice-assistant', // choice-assistant, importance, results
             }
         },
         methods: {
@@ -155,7 +179,7 @@ import { questions } from '@/js/json/kem-questions';
             },
             gotoNextQuestion(){
                 if(this.current_question[0] == this.questions.length - 1 && this.current_question[1] == this.questions[this.current_question[0]].content.length - 1){
-                    this.tab = 'results';
+                    this.tab = 'importance';
                     return
                 }
 
