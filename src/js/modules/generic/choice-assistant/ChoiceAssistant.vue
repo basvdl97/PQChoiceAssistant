@@ -101,6 +101,13 @@
                                 k += 1;
                             }
 
+                            // Keep track of all answers to this question.
+                            let num_selected_answers = 0;
+                            let question_scores = {};
+                            for (let key in scores) {
+                                question_scores[key] = 0;
+                            }
+
                             question.selected_answers.forEach((answer_index) => {
                                 const scores_for_answer = question.answers[answer_index].scores;
 
@@ -112,9 +119,15 @@
                                     if (isNaN(value)) {
                                         continue;
                                     }
-                                    total_scores[key] += value * multiplier;
+                                    question_scores[key] += multiplier * value;
                                 }
+                                num_selected_answers++;
                             });
+
+                            // Add the average scores for this question to the total.
+                            for (let key in scores) {
+                                total_scores[key] += question_scores[key] / num_selected_answers;
+                            }
                         }
                     });
                 });
