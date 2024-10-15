@@ -73,7 +73,7 @@
                                 </div>
                             </td>
                             <td v-for="(algo, j) in kem_algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
-                                {{ kem_education_table[characteristic][algo].EN }}
+                                {{ kem_education_table[characteristic][algo][this.language?.current??'EN'] }}
                             </td>
                         </tr>
                     </tbody>
@@ -107,7 +107,7 @@
                                 </div>
                             </td>
                             <td v-for="(algo, j) in dss_algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
-                                {{ dss_education_table[characteristic][algo].EN }}
+                                {{ dss_education_table[characteristic][algo][this.language?.current??'EN'] }}
                             </td>
                         </tr>
                     </tbody>

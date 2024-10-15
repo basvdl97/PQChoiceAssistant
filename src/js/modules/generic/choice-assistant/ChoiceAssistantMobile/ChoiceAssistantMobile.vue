@@ -22,7 +22,7 @@
                         Expert-level question
                     </div>
                     <h2 class="text-secondary text-xl font-semibold leading-none relative">
-                        {{ current_question_object?.question?.EN }}
+                        {{ current_question_object?.question[this.language?.current??'EN'] }}
                     </h2>
                 </div>
 
@@ -32,7 +32,7 @@
                         <ChoiceAssistantRadio v-if="current_question_object.max_selectable_answers <= 1" :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`"  />
                         <ChoiceAssistantCheckbox v-else :checked="current_question_object?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(current_question_object, k)" :id="`question-${current_question[0]}-answer-${k}`"  />
                         <label :for="`question-${current_question[0]}-answer-${k}`" class="text-black font-semibold text-md cursor-pointer" @click="handleSelectAnswer(current_question_object, k)">
-                            {{ answer.text.EN }}
+                            {{ answer.text[this.language?.current??'EN'] }}
                         </label>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
             </div>
 
             <div class="w-full px-8 pt-8 bg-white text-justify flex-1  leading-tight text-sm">
-                {{ current_question_object?.description?.EN }}
+                {{ current_question_object?.description[this.language?.current??'EN'] }}
             </div>
         </div>
     </template>
@@ -136,6 +136,7 @@ import { questions } from '@/js/json/kem-questions';
             ChoiceAssistantCheckbox,
             ChoiceAssistantRadio
         },
+        inject: ['language'],
         props: {
             title_text: {
                 type: String,

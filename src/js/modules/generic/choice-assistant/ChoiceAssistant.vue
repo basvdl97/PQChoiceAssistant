@@ -40,7 +40,6 @@
                 required: true,
             },
         },
-        inject: ['language'],
         components: {
             ChoiceAssistantStandard,
             ChoiceAssistantMobile,
@@ -163,7 +162,7 @@
                             answered_questions.push({
                                 index: [i, j],
                                 expert_level: question.expert_level,
-                                question: question.question.EN,
+                                question: question.question[this.language?.current??'EN'],
                                 answers: question.selected_answers.map((answer_index) => {
                                     return question.answers[answer_index].text.EN;
                                 }),

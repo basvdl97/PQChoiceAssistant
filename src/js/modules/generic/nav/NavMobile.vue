@@ -43,7 +43,7 @@
             </div>
 
             <!-- language buttons -->
-            <div class="flex w-full justify-center gap-1">
+            <div class="flex w-full justify-center gap-1 mt-4">
                 <button @click="this.language.current = 'NL'" class="text-white p-1" :class="{'border rounded-full border-primary': this.language.current === 'NL'}">
                     <img src="@/assets/dutch-flag.png" alt="NL" class="w-5 h-5" />
                 </button>

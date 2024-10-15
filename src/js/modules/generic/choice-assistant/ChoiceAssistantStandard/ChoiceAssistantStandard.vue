@@ -31,7 +31,7 @@
                                     <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46z"/>
                                 </svg>
                             </div>
-                            {{ question?.question?.EN }}
+                            {{ question?.question[this.language?.current??'EN'] }}
                         </h2>
 
                         <!-- Answer choices -->
@@ -40,7 +40,7 @@
                                 <ChoiceAssistantRadio v-if="question.max_selectable_answers <= 1" :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
                                 <ChoiceAssistantCheckbox v-else :checked="question?.selected_answers?.includes(k)" @handle-click="handleSelectAnswer(question, k)" :id="`question-${i}-answer-${k}`"  />
                                 <label :for="`question-${i}-answer-${k}`" class="text-black font-semibold text-sm cursor-pointer" @click="handleSelectAnswer(question, k)">
-                                    {{ answer.text.EN }}
+                                    {{ answer.text[this.language?.current??'EN'] }}
                                 </label>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                     <!-- description -->
                     <div class="flex-1 py-2 text-black font-semibold text-sm">
                         <span v-if="i == 0" class="text-semibold text-xl text-primary">Explanation<br/><br/></span>
-                        {{ question?.description?.EN }}
+                        {{ question?.description[this.language?.current??'EN'] }}
                     </div>
                 </div>
             </div>
@@ -77,6 +77,7 @@
 
             ChoiceAssistantStandardResults
         },
+        inject: ['language'],
         props: {
             title_text: {
                 type: String,
