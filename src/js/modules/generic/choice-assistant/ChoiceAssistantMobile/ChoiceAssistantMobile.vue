@@ -51,7 +51,7 @@
                 <div @click="gotoNextQuestion" class="flex gap-1 items-center cursor-pointer">
                     <div>
                         <template v-if="current_question[0] == questions.length - 1 && current_question[1] == questions[current_question[0]].content.length - 1" >
-                            Results
+                            Importance
                         </template>
                         <template v-else>
                             Next Question

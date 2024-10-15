@@ -15,7 +15,7 @@
             <div v-for="scoring_key in Object.keys(scores)" class="flex flex-col justify-center mt-4">
                 <div class="text-primary font-bold text-lg">{{ scoring_key }}</div>
                 <div class="flex items-center">
-                    <div class="pr-2 text-left font-semibold text-lg w-8 max-w-8 min-w-8">{{ scores[scoring_key] }}</div>
+                    <div class="pr-2 text-left font-semibold text-lg w-8 max-w-8 min-w-8">{{ scores[scoring_key].toFixed(0) }}</div>
                     <div class="flex-1 flex items-center">
                         <!-- filled bar -->
                         <div v-if="scores[scoring_key]" class="bg-primary h-7"

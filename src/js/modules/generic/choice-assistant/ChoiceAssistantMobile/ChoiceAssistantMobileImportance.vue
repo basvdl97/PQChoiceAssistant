@@ -35,26 +35,27 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    
+    
     <!-- prev &  next question button -->
-    <div class="fixed bottom-16 w-[100vw] flex justify-center">
-        <div class="w-full flex justify-between text-lg text-secondary font-semibold px-8">
-            <div @click="handleBackToQuestions" class="flex gap-1 items-center  cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                    <path
-                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-                </svg>
-                <div>Back to questions</div>
-            </div>
-            <div @click="handleToResults" class="flex gap-1 items-center  cursor-pointer">
-                <div>To Results</div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-caret-left-fill rotate-180" viewBox="0 0 16 16">
-                    <path
-                        d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
-                </svg>
-            </div>
+    <div class="w-full flex justify-between text-lg text-secondary font-semibold px-8 my-8">
+        <div @click="handleBackToQuestions" class="flex gap-1 items-center  cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                <path
+                    d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+            </svg>
+            <div>Back to questions</div>
+        </div>
+        <div @click="handleToResults" class="flex gap-1 items-center  cursor-pointer">
+            <div>To Results</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-caret-left-fill rotate-180" viewBox="0 0 16 16">
+                <path
+                    d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
+            </svg>
         </div>
     </div>
 </template>
