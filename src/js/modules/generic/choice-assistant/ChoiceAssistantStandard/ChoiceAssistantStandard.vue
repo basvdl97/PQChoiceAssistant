@@ -51,7 +51,14 @@
 
                     <!-- description -->
                     <div class="flex-1 py-2 text-black font-semibold text-sm">
-                        <span v-if="i == 0" class="text-semibold text-xl text-primary">Explanation<br/><br/></span>
+                        <span v-if="i == 0" class="text-semibold text-xl text-primary">
+                            <template v-if="language.current == 'EN'">
+                                Explanation
+                            </template>
+                            <template v-if="language.current == 'NL'">
+                                Uitleg
+                            </template>
+                        <br/><br/></span>
                         {{ question?.description[this.language?.current??'EN'] }}
                     </div>
                 </div>

@@ -1,11 +1,23 @@
 <template>
     <div class="w-full flex justify-center">
         <div class="w-full max-w-5xl px-8 mt-12">
-            <h1 class="text-primary font-bold text-xl">Indicate which question topics are most important to you</h1>
+            <h1 class="text-primary font-bold text-2xl">
+                <template v-if="language.current == 'EN'">
+                    Indicate which question topics are most important to you.
+                </template>
+                <template v-else-if="language.current == 'NL'">
+                    Geef aan welke vraagonderwerpen het belangrijkst zijn voor u.
+                </template>
+            </h1>
             <div class="w-full flex flex-col gap-4 mt-12">
                 <div v-if="!answered_questions || answered_questions.length == 0" class="mb-16 -mt-8">
                     <div class="text-quadrinary font-semibold text-lg leading-none">
-                        No questions have been answered yet.
+                        <template v-if="language.current == 'EN'">
+                            Please answer all questions to see the results.
+                        </template>
+                        <template v-else-if="language.current == 'NL'">
+                            Please answer all vragen om de resultaten te zien.
+                        </template>
                     </div>
                 </div>
                 <div v-for="answered_question in answered_questions" class="w-full flex gap-4">
@@ -45,17 +57,31 @@
     
     
     <!-- prev &  next question button -->
-    <div class="w-full flex justify-between text-lg text-secondary font-semibold px-8 my-8">
+    <div class="w-full flex justify-between text-lg text-secondary font-semibold px-8 mb-8 mt-16">
         <div @click="handleBackToQuestions" class="flex gap-1 items-center  cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                 <path
                     d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
             </svg>
-            <div>Back to questions</div>
+            <div>
+                <template v-if="language.current == 'EN'">
+                    Back to questions
+                </template>
+                <template v-else-if="language.current == 'NL'">
+                    Terug naar vragen
+                </template>
+            </div>
         </div>
         <div @click="handleToResults" class="flex gap-1 items-center  cursor-pointer">
-            <div>To Results</div>
+            <div>
+                <template v-if="language.current == 'EN'">
+                    To Results
+                </template>
+                <template v-else-if="language.current == 'NL'">
+                    Naar Resultaten
+                </template>
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 class="bi bi-caret-left-fill rotate-180" viewBox="0 0 16 16">
                 <path
@@ -73,6 +99,7 @@ export default {
     components: {
         ChoiceAssistantCheckbox,
     },
+    inject: ['language'],
     props:{
         title_text: {
             type: String,
