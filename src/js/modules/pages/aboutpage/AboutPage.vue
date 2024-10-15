@@ -8,7 +8,6 @@
                 </h3>
 
                 <!-- description -->
-                
                 <div class="mt-8 leading-none">
                     The PQChoiceAssistant is a tool developed by TNO and Centrum Wiskunde & Informatica, with the
                     support of Fox Crypto, NXP, Technolution and Compumatica, commissioned by the Dutch General

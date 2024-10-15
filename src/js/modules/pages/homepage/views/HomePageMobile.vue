@@ -7,13 +7,25 @@
 
         <!-- description -->
         <div class="font-semibold mt-6 mb-12 leading-none text-center">
-            For which type of algorithm do you need assistance?
+            <template v-if="language.current == 'EN'">
+                For which type of algorithm do you need assistance?
+            </template>
+            <template v-if="language.current == 'NL'">
+                Voor welk type algoritme heb je hulp nodig?
+            </template>
         </div>
 
         <!-- button to KEM / Encryption -->
         <div @click="$router.push({ name: 'KEMPageRoute' })"
             class="w-full max-w-[300px] mb-4 bg-secondary text-white p-3 rounded-lg cursor-pointer">
-            <div class="text-xl leading-none mb-2">Encryption</div>
+            <div class="text-xl leading-none mb-2">
+                <template v-if="language.current == 'EN'">
+                    Encryption
+                </template>
+                <template v-if="language.current == 'NL'">
+                    Encryptie
+                </template>
+            </div>
 
             <div class="w-full flex justify-end items-center">
                 <div>Start survey</div>
@@ -47,7 +59,14 @@
         <!-- button to DSS / Signatures -->
         <div @click="$router.push({ name: 'AlgorithmOverviewPageRoute' })"
             class="w-full max-w-[300px] mb-4 bg-primary text-white p-3 rounded-lg cursor-pointer">
-            <div class="text-xl leading-none mb-2">Overview of PQC</div>
+            <div class="text-xl leading-none mb-2">
+                <template v-if="language.current == 'EN'">
+                    Overview of PQC
+                </template>
+                <template v-if="language.current == 'NL'">
+                    Overzicht van PQC
+                </template>
+            </div>
 
             <div class="w-full flex justify-end items-center">
                 <div>View</div>
