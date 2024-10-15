@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       language: {
-        current: 'NL',
+        current: 'EN',
       },
     }
   },
