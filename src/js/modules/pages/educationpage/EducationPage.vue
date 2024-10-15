@@ -7,11 +7,21 @@
                     <!-- buttons left -->
                     <div class="flex gap-4 items-center">
                         <button
-                            class="px-4 py-3 leading-none font-semibold rounded-md text-white bg-secondary cursor-pointer text-xl">
+                            @click="tab = 'kem'"
+                            class="px-4 py-3 leading-none font-semibold rounded-md cursor-pointer text-xl"
+                            :class="{
+                                'bg-secondary text-white': tab == 'kem',
+                                'bg-white text-secondary border border-secondary': tab != 'kem',
+                            }">
                             Encryption
                         </button>
                         <button
-                            class="px-4 py-3 leading-none font-semibold rounded-md text-orange-600 bg-white border border-orange-600 cursor-pointer text-xl">
+                            @click="tab = 'dss'"
+                            class="px-4 py-3 leading-none font-semibold rounded-md cursor-pointer text-xl"
+                            :class="{
+                                'bg-quadrinary text-white': tab == 'dss',
+                                'bg-white text-quadrinary border border-quadrinary': tab != 'dss',
+                            }">
                             Signatures
                         </button>
                     </div>
@@ -35,20 +45,20 @@
                 </div>
 
 
-                <!-- table -->
-                <table class="w-full mt-16">
+                <!-- kem table -->
+                <table v-if="tab == 'kem'" class="w-full mt-16">
                     <thead>
                         <tr class="text-primary font-bold text-lg">
                             <th class="py-4">
                                 Characteristics
                             </th>
-                            <th v-for="algo in algorithms" class="py-4 text-center border-l border-l-1 border-primary">
+                            <th v-for="algo in kem_algorithms" class="py-4 text-center border-l border-l-1 border-primary">
                                 {{ algo }}
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(characteristic, i) in Object.keys(education_table)" class="text-secondary" :class="{
+                        <tr v-for="(characteristic, i) in Object.keys(kem_education_table)" class="text-secondary" :class="{
                             'bg-tertiary': i % 2 == 0,
                             'bg-white': i % 2 != 0,
                         }">
@@ -62,8 +72,42 @@
                                     </div>
                                 </div>
                             </td>
-                            <td v-for="(algo, j) in algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
-                                {{ education_table[characteristic][algo].EN }}
+                            <td v-for="(algo, j) in kem_algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
+                                {{ kem_education_table[characteristic][algo].EN }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- dss table -->
+                <table v-else-if="tab == 'dss'" class="w-full mt-16">
+                    <thead>
+                        <tr class="text-primary font-bold text-lg">
+                            <th class="py-4">
+                                Characteristics
+                            </th>
+                            <th v-for="algo in dss_algorithms" class="py-4 text-center border-l border-l-1 border-primary">
+                                {{ algo }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(characteristic, i) in Object.keys(dss_education_table)" class="text-secondary" :class="{
+                            'bg-tertiary': i % 2 == 0,
+                            'bg-white': i % 2 != 0,
+                        }">
+                            <td>
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 bg-secondary rounded-full text-white flex leading-none items-center justify-center font-bold text-lg">
+                                        {{ i + 1}}
+                                    </div>
+                                    <div class="font-semibold text-lg leading-none pr-2">
+                                        {{ characteristic }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td v-for="(algo, j) in dss_algorithms" class="text-center leading-snug text-black border-l border-l-1 border-primary px-2 py-2">
+                                {{ dss_education_table[characteristic][algo].EN }}
                             </td>
                         </tr>
                     </tbody>
@@ -81,29 +125,51 @@
 </template>
 
 <script>
-import { education_table } from '@/js/json/kem-education-table.js'
+import kem_education_table from '@/js/json/kem-education-table.js';
+import dss_education_table from '@/js/json/dss-education-table.js';
 
 export default {
     name: "EducationPage",
     data(){
         return {
-            education_table,
+            kem_education_table,
+            dss_education_table,
+
+            tab: "kem",
         }
     },
     mounted(){
         console.log("Education Table")
-        console.log(this.education_table)
+        console.log(this.kem_education_table)
+        console.log(this.dss_education_table)
     },
     computed: {
-        algorithms(){
+        kem_algorithms(){
             const algos = [];
 
-            if(!this.education_table || !Object.keys(this.education_table).length){
+            if(!this.kem_education_table || !Object.keys(this.kem_education_table).length){
                 return algos;
             }
 
-            Object.keys(this.education_table).forEach((key) => {
-                Object.keys(this.education_table[key]).forEach((algo) => {
+            Object.keys(this.kem_education_table).forEach((key) => {
+                Object.keys(this.kem_education_table[key]).forEach((algo) => {
+                    if(!algos.includes(algo)){
+                        algos.push(algo)
+                    }
+                });
+            });
+
+            return algos;
+        },
+        dss_algorithms(){
+            const algos = [];
+
+            if(!this.dss_education_table || !Object.keys(this.dss_education_table).length){
+                return algos;
+            }
+
+            Object.keys(this.dss_education_table).forEach((key) => {
+                Object.keys(this.dss_education_table[key]).forEach((algo) => {
                     if(!algos.includes(algo)){
                         algos.push(algo)
                     }
