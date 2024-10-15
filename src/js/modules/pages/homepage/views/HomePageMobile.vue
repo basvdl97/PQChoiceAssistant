@@ -96,7 +96,12 @@
             }">
             <!-- left side  -->
             <div class="flex-1 text-sm">
-                More information
+                <template v-if="language.current == 'EN'">
+                    More information
+                </template>
+                <template v-else-if="language.current == 'NL'">
+                    Meer informatie
+                </template>
             </div>
 
             <!-- middle -->
