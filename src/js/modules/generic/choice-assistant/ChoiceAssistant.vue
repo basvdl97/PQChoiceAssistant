@@ -164,7 +164,7 @@
                                 expert_level: question.expert_level,
                                 question: question.question[this.language?.current??'EN'],
                                 answers: question.selected_answers.map((answer_index) => {
-                                    return question.answers[answer_index].text.EN;
+                                    return question.answers[answer_index].text[this.language?.current??'EN'];
                                 }),
                             });
                         }
