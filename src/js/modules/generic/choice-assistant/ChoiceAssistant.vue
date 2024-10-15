@@ -40,6 +40,7 @@
                 required: true,
             },
         },
+        inject: ['language'],
         components: {
             ChoiceAssistantStandard,
             ChoiceAssistantMobile,
