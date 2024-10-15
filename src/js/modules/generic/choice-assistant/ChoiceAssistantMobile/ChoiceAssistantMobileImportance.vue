@@ -1,8 +1,13 @@
 <template>
     <div class="w-full flex justify-center">
         <div class="w-full max-w-5xl px-8 mt-12">
-            <h1 class="text-primary font-bold text-lg">Indicate which question topics are most important to you</h1>
+            <h1 class="text-primary font-bold text-xl">Indicate which question topics are most important to you</h1>
             <div class="w-full flex flex-col gap-4 mt-12">
+                <div v-if="!answered_questions || answered_questions.length == 0" class="mb-16 -mt-8">
+                    <div class="text-quadrinary font-semibold text-lg leading-none">
+                        No questions have been answered yet.
+                    </div>
+                </div>
                 <div v-for="answered_question in answered_questions" class="w-full flex gap-4">
                     <!-- checkbox & expert symbol -->
                     <div class="flex flex-col items-center">
