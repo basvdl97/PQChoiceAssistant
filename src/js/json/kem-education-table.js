@@ -1,4 +1,4 @@
-export const education_table = {
+export default {
     "Information Security": {
         "BIKE": {
             "NL": "ntb",
