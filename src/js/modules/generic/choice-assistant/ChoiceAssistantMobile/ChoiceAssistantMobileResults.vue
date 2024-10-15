@@ -7,7 +7,12 @@
         </div>
         <div class="flex w-full justify-center mt-2 mb-8">
             <h1 class="text-primary">
-                Results
+                <template v-if="language.current == 'EN'">
+                    Results
+                </template>
+                <template v-else-if="language.current == 'NL'">
+                    Resultaten
+                </template>
             </h1>
         </div>
 
@@ -51,7 +56,14 @@
                     <path
                         d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                 </svg>
-                <div>Back to importance</div>
+                <div>
+                    <template v-if="language.current == 'EN'">
+                        Back to importance
+                    </template>
+                    <template v-else-if="language.current == 'NL'">
+                        Terug naar belangrijkheid
+                    </template>
+                </div>
             </div>
             <div />
         </div>
@@ -76,6 +88,7 @@ export default {
         },
 
     },
+    inject: ['language'],
     emits: ['handle-back-to-importance'],
     methods: {
         handleBackToImportance() {

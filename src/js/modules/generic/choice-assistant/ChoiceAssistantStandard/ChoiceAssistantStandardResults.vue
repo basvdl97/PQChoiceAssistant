@@ -6,7 +6,12 @@
             </h1>
             <div class="flex gap-2 items-center">
                 <button @click="handleBackToQuestions" class="px-4 py-2 bg-primary text-white font-semibold rounded-md">
-                    Back to questions
+                    <template v-if="language.current == 'EN'">
+                        Back to questions
+                    </template>
+                    <template v-else-if="language.current == 'NL'">
+                        Terug naar vragen
+                    </template>
                 </button>
                 <!-- <button @click="handlePrintPage" class="px-4 py-2 bg-primary text-white font-semibold rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
@@ -20,12 +25,24 @@
         <div class="w-full flex gap-4 min-h-[70vh]">
             <!-- important topics -->
             <div class="flex-1 flex flex-col">
-                <h1 class="text-primary font-bold text-lg">Indicate which question topics are most important to you</h1>
+                <h1 class="text-primary font-bold text-lg">
+                    <template v-if="language.current == 'EN'">
+                        Indicate which question topics are most important to you.
+                    </template>
+                    <template v-else-if="language.current == 'NL'">
+                        Geef aan welke vraagonderwerpen het belangrijkst zijn voor u.
+                    </template>
+                </h1>
 
                 <div class="w-full flex flex-col gap-4 mt-12">
                     <div v-if="!answered_questions || answered_questions.length == 0" class="mb-16 -mt-8">
                         <div class="text-quadrinary font-semibold text-lg leading-none">
-                            No questions have been answered yet.
+                            <template v-if="language.current == 'EN'">
+                                Please answer all questions to see the results.
+                            </template>
+                            <template v-else-if="language.current == 'NL'">
+                                Please answer all vragen om de resultaten te zien.
+                            </template>
                         </div>
                     </div>
                     <div v-for="answered_question in answered_questions" class="w-full flex gap-4">
@@ -126,6 +143,7 @@ export default {
     components: {
         ChoiceAssistantCheckbox,
     },
+    inject: ['language'],
     props: {
         title_text: {
             type: String,
@@ -145,6 +163,7 @@ export default {
             default: [],
         },
     },
+    
     emits: ['handle-back-to-questions'],
     methods: {
         handleBackToQuestions() {

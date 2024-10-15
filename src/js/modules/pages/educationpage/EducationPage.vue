@@ -138,6 +138,7 @@ export default {
             tab: "kem",
         }
     },
+    inject: ['language'],
     mounted(){
         console.log("Education Table")
         console.log(this.kem_education_table)

@@ -10,7 +10,12 @@
 
                 <!-- description -->
                 <div class="font-semibold my-8 leading-none">
-                    For which type of algorithm do you need assistance?
+                    <template v-if="language.current == 'EN'">
+                        For which type of algorithm do you need assistance?
+                    </template>
+                    <template v-if="language.current == 'NL'">
+                        Voor welk type algoritme heb je hulp nodig?
+                    </template>
                 </div>
 
                 <!-- button container -->
@@ -18,10 +23,19 @@
                     <!-- button to KEM / Encryption -->
                     <div @click="$router.push({ name: 'KEMPageRoute' })"
                         class="w-2/3 mb-4 bg-secondary text-white p-3 rounded-lg cursor-pointer">
-                        <div class="text-xl leading-none mb-2">Encryption</div>
+                        <div class="text-xl leading-none mb-2">
+                            <template v-if="language.current == 'EN'">
+                                Encryption
+                            </template>
+                            <template v-if="language.current == 'NL'">
+                                Encryptie
+                            </template>
+                        </div>
 
                         <div class="w-full flex justify-end items-center">
-                            <div>Start survey</div>
+                            <div>
+                                Start survey
+                            </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -35,7 +49,9 @@
                     <!-- button to DSS / Signatures -->
                     <div @click="$router.push({ name: 'DSSPageRoute' })"
                         class="w-2/3 mb-4 bg-quadrinary text-white p-3 rounded-lg cursor-pointer">
-                        <div class="text-xl leading-none mb-2">Signatures</div>
+                        <div class="text-xl leading-none mb-2">
+                            Signatures
+                        </div>
 
                         <div class="w-full flex justify-end items-center">
                             <div>Start survey</div>
@@ -52,10 +68,24 @@
                     <!-- button to DSS / Signatures -->
                     <div @click="$router.push({ name: 'AlgorithmOverviewPageRoute' })"
                         class="w-2/3 bg-primary text-white p-3 rounded-lg cursor-pointer">
-                        <div class="text-xl leading-none mb-2">Overview of PQC</div>
+                        <div class="text-xl leading-none mb-2">
+                            <template v-if="language.current == 'EN'">
+                                Overview of PQC
+                            </template>
+                            <template v-if="language.current == 'NL'">
+                                Overzicht van PQC
+                            </template>
+                        </div>
 
                         <div class="w-full flex justify-end items-center">
-                            <div>View</div>
+                            <div>
+                                <template v-if="language.current == 'EN'">
+                                    View
+                                </template>
+                                <template v-if="language.current == 'NL'">
+                                    Bekijk
+                                </template>
+                            </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -73,24 +103,39 @@
 
             <!-- right panel -->
             <div class="flex-1">
-                <!-- title  -->
-                <h3 class="text-primary font-bold text-lg leading-none">
-                    Welcome to the PQChoiceAssistant!
-                </h3>
+                <template v-if="language.current == 'EN'">
+                    <!-- title  -->
+                    <h3 class="text-primary font-bold text-lg leading-none">
+                        Welcome to the PQChoiceAssistant!
+                    </h3>
 
-                <!-- description -->
-                <div class="mt-8 leading-none">
-                    With this open-source tool, you can get advice on the feasibility of various post-quantum
-                    cryptographic algorithms in your use-case.<br /><br />
-                    By answering relevant questions about your situation, you are able to see recommendations on the
-                    most well-suited option, as well as the pros and cons of the schemes.<br /><br />
-                    All information entered in the PQChoiceAssistant is handled client-side, and all calculations are
-                    done
-                    in the browser. Therefore, no information is stored or viewed by the creators of the
-                    PQChoiceAssistant.<br /><br />
-                    <i>For this reason, the tool can also be used offline. You can easily download the website code and
-                        background material from GitHub, by clicking the GitHub icon in the top right.</i>
-                </div>
+                    <!-- description -->
+                    <div  class="mt-8 leading-none">
+                        With this open-source tool, you can get advice on the feasibility of various post-quantum
+                        cryptographic algorithms in your use-case.<br /><br />
+                        By answering relevant questions about your situation, you are able to see recommendations on the
+                        most well-suited option, as well as the pros and cons of the schemes.<br /><br />
+                        All information entered in the PQChoiceAssistant is handled client-side, and all calculations are
+                        done
+                        in the browser. Therefore, no information is stored or viewed by the creators of the
+                        PQChoiceAssistant.<br /><br />
+                        <i>For this reason, the tool can also be used offline. You can easily download the website code and
+                            background material from GitHub, by clicking the GitHub icon in the top right.</i>
+                    </div>
+                </template>
+                <template v-if="language.current == 'NL'">
+                    <!-- title  -->
+                    <h3 class="text-primary font-bold text-lg leading-none">
+                        Welkom bij de PQChoiceAssistant!
+                    </h3>
+
+                    <!-- description -->
+                    <div class="mt-8 leading-none">
+                        Met deze open-source tool kunt u advise krijgen over de geschiktheid van verschillende post-quantum cryptografische algoritmen die passen bij uw toepassing.<br /><br />
+                        Door relevante vragen over uw situatie te beantwoorden, kunt u aanbevelingen zien over de meest geschikte opties, net als enige voor- en nadelen van elk algoritme.<br /><br />
+                        Alle informatie die u in de PQChoiceAssistant invoert, wordt aan de client-side behandeld, en alle berekeningen worden in uw browser uitgevoerd. Dit zorgt ervoor dat geen informatie wordt opgeslagen of gezien door de makers van de PQChoiceAssistant.
+                    </div>
+                </template>
             </div>
         </div>
     </div>
@@ -99,6 +144,6 @@
 <script>
 export default {
     name: 'HomePageStandard',
-
+    inject: ['language'],
 }
 </script>

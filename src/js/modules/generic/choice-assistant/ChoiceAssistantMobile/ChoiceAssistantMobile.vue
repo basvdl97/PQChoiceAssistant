@@ -46,15 +46,32 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                     </svg>
-                    <div>Previous Question</div>
+                    <div>
+                        <template v-if="language.current == 'EN'">
+                            Previous Question
+                        </template>
+                        <template v-if="language.current == 'NL'">
+                            Vorige Vraag
+                        </template>
+                    </div>
                 </div>
                 <div @click="gotoNextQuestion" class="flex gap-1 items-center cursor-pointer">
                     <div>
                         <template v-if="current_question[0] == questions.length - 1 && current_question[1] == questions[current_question[0]].content.length - 1" >
-                            Importance
+                            <template v-if="language.current == 'EN'">
+                                Importance
+                            </template>
+                            <template v-if="language.current == 'NL'">
+                                Belangrijkheid
+                            </template>
                         </template>
                         <template v-else>
-                            Next Question
+                            <template v-if="language.current == 'EN'">
+                                Next Question
+                            </template>
+                            <template v-if="language.current == 'NL'">
+                                Volgende Vraag
+                            </template>
                         </template>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -76,7 +93,12 @@
             }">
                 <!-- left side  -->
                 <div class="flex-1 text-sm">
-                    More information
+                    <template v-if="language.current == 'EN'">
+                        More information
+                    </template>
+                    <template v-else-if="language.current == 'NL'">
+                        Meer informatie
+                    </template>
                 </div>
 
                 <!-- middle -->
