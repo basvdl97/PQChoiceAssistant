@@ -78,7 +78,14 @@
                         </div>
 
                         <div class="w-full flex justify-end items-center">
-                            <div>View</div>
+                            <div>
+                                <template v-if="language.current == 'EN'">
+                                    View
+                                </template>
+                                <template v-if="language.current == 'NL'">
+                                    Bekijk
+                                </template>
+                            </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                     class="bi bi-caret-right-fill" viewBox="0 0 16 16">
