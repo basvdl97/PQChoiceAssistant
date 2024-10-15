@@ -41,6 +41,16 @@
                     {{ menu_item.label }}
                 </button>
             </div>
+
+            <!-- language buttons -->
+            <div class="flex w-full justify-center gap-1">
+                <button @click="this.language.current = 'NL'" class="text-white p-1" :class="{'border rounded-full border-primary': this.language.current === 'NL'}">
+                    <img src="@/assets/dutch-flag.png" alt="NL" class="w-5 h-5" />
+                </button>
+                <button @click="this.language.current = 'EN'" class="text-white p-1" :class="{'border rounded-full border-primary': this.language.current === 'EN'}">
+                    <img src="@/assets/english-flag.png" alt="EN" class="w-5 h-5" />
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -57,6 +67,7 @@ export default {
             required: true,
         },
     },
+    inject: ['language'],
     emits: ['handle-click-nav-item'],
     data() {
         return {
@@ -104,7 +115,7 @@ export default {
             this.is_menu_open = false;
         },
         handleClickOutside(event) {
-            if (this.$refs.myElement2.contains(event.target)) { return; };
+            if (this.$refs?.myElement2?.contains(event.target)) { return; };
 
             const element = this.$refs.myElement;
             if (element && !element.contains(event.target)) {

@@ -13,6 +13,18 @@ export default {
   components: {
     RouterView,
     Nav
+  },
+  data() {
+    return {
+      language: {
+        current: 'NL',
+      },
+    }
+  },
+  provide() {
+    return {
+      language: this.language,
+    }
   }
 }
 </script>

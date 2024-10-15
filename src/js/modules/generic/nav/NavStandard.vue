@@ -22,13 +22,22 @@
                         </h2>
                     </button>
                 </div>
+
+                <!-- language buttons -->
+                <div class="flex  gap-1">
+                    <button @click="this.language.current = 'NL'" class="text-white p-1" :class="{'border rounded-full border-white': this.language.current === 'NL'}">
+                        <img src="@/assets/dutch-flag.png" alt="NL" class="w-4 h-4" />
+                    </button>
+                    <button @click="this.language.current = 'EN'" class="text-white p-1" :class="{'border rounded-full border-white': this.language.current === 'EN'}">
+                        <img src="@/assets/english-flag.png" alt="EN" class="w-4 h-4" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import { h } from 'vue';
 
 export default {
     props: {
@@ -46,6 +55,7 @@ export default {
         handleClickNavItem(menu_item) {
             this.$emit('handle-click-nav-item', menu_item);
         },
-    }
+    },
+    inject: ['language'],
 }
 </script>
