@@ -1,30 +1,30 @@
 {
     "Information Security": {
-        "BIKE": {
+        "Kyber": {
             "NL": "ntb",
-            "EN": "Based on the Syndrome Decoding problem (code-based)"
+            "EN": "Lattice-based. Based on the learning with errors problem in structured (module) lattices"
         },
         "McEliece": {
             "NL": "ntb",
-            "EN": "Based on the decoding of Goppa codes (code-based)"
+            "EN": "Code-based. Based on the decoding of Goppa codes"
         },
         "Frodo": {
             "NL": "ntb",
-            "EN": "Based on the learning with errors problem (lattice-based)"
+            "EN": "Lattice-based. Based on the learning with errors problem in unstructured lattices"
         },
         "HQC": {
             "NL": "ntb",
-            "EN": "Based on quasi-cyclic moderate density parity-check (code-based)"
+            "EN": "Code-based. Based on quasi-cyclic moderate density parity-check"
         },
-        "Kyber": {
+        "BIKE": {
             "NL": "ntb",
-            "EN": "Based on the module learning with errors problem (lattice-based)"
+            "EN": "Code-based. Based on the Syndrome Decoding problem"
         }
     },
     "Maturity": {
-        "BIKE": {
+        "Kyber": {
             "NL": "ntb",
-            "EN": "Published in 2018"
+            "EN": "Published in 2017"
         },
         "McEliece": {
             "NL": "ntb",
@@ -38,19 +38,19 @@
             "NL": "ntb",
             "EN": "Published in 2017"
         },
-        "Kyber": {
+        "BIKE": {
             "NL": "ntb",
-            "EN": "Published in 2017"
+            "EN": "Published in 2018"
         }
     },
     "Standardisation": {
-        "BIKE": {
+        "Kyber": {
             "NL": "ntb",
-            "EN": "tbd (Has been selected for NIST standardization round 4)"
+            "EN": "Won NIST's six-year long competition and was selected as its main standard in 2024"
         },
         "McEliece": {
             "NL": "ntb",
-            "EN": "tbd (Has been selected for NIST standardization round 4)"
+            "EN": "Still in competition - has been selected for NIST standardization round 4"
         },
         "Frodo": {
             "NL": "ntb",
@@ -58,17 +58,17 @@
         },
         "HQC": {
             "NL": "ntb",
-            "EN": "tbd (Has been selected for NIST standardization round 4)"
+            "EN": "Still in competition - has been selected for NIST standardization round 4"
         },
-        "Kyber": {
+        "BIKE": {
             "NL": "ntb",
-            "EN": "Won NIST's six-year long competition and was selected as its main standard in 2024"
+            "EN": "Still in competition - has been selected for NIST standardization round 4"
         }
     },
     "Hardware": {
-        "BIKE": {
+        "Kyber": {
             "NL": "ntb",
-            "EN": "Integrated in VHDL for Xilinx FPGA"
+            "EN": "Integrated in ARM Cortex A, M53, M4(F), M0+; FPGA, ASIC, SLE 78, RISC-V"
         },
         "McEliece": {
             "NL": "ntb",
@@ -82,15 +82,15 @@
             "NL": "ntb",
             "EN": "Integrated in Xilinx Artix-7 FPGA"
         },
-        "Kyber": {
-            "NL": "ntb",
-            "EN": "Integrated in ARM Cortex A, M53, M4(F), M0+; FPGA, ASIC, SLE 78, RISC-V"
-        }
-    },
-    "Storage": {
         "BIKE": {
             "NL": "ntb",
-            "EN": "Small keys, fairly small ciphertexts"
+            "EN": "Integrated in VHDL for Xilinx FPGA"
+        }
+    },
+    "Storage & communication": {
+        "Kyber": {
+            "NL": "ntb",
+            "EN": "Very small keys, relatively small ciphertexts"
         },
         "McEliece": {
             "NL": "ntb",
@@ -104,15 +104,15 @@
             "NL": "ntb",
             "EN": "Small keys, but large ciphertexts"
         },
-        "Kyber": {
-            "NL": "ntb",
-            "EN": "Very small keys, relatively small ciphertexts"
-        }
-    },
-    "Communication/performance": {
         "BIKE": {
             "NL": "ntb",
-            "EN": "Fairly fast key generation, very fast encryption but slower decryption"
+            "EN": "Small keys, fairly small ciphertexts"
+        }
+    },
+    "Performance": {
+        "Kyber": {
+            "NL": "ntb",
+            "EN": "Fastest key generation, encryption and decryption"
         },
         "McEliece": {
             "NL": "ntb",
@@ -126,13 +126,35 @@
             "NL": "ntb",
             "EN": "Very fast key generation, also fast encryption and decryption"
         },
-        "Kyber": {
+        "BIKE": {
             "NL": "ntb",
-            "EN": "Fastest key generation, encryption and decryption"
+            "EN": "Fairly fast key generation, very fast encryption but slower decryption"
         }
     },
-    "Side channel attacks": {
+    "Sizes (NIST level 1)": {
+        "Kyber": {
+            "NL": "ntb",
+            "EN": "Public key: 0.8 kB, secret key: 1.6 kB, ciphertext: 0.8 kB"
+        },
+        "McEliece": {
+            "NL": "ntb",
+            "EN": "Public key: 261 kB, secret key: 6.5 kB, ciphertext: 0.1 kB"
+        },
+        "Frodo": {
+            "NL": "ntb",
+            "EN": "Public key: 9.6 kB, secret key: 20 kB, ciphertext: 9.8 kB"
+        },
+        "HQC": {
+            "NL": "ntb",
+            "EN": "Public key: 3.0 kB, secret key: 3.0 kB, ciphertext: 6.0 kB"
+        },
         "BIKE": {
+            "NL": "ntb",
+            "EN": "Public key: 1.5 kB, secret key: 5.2 kB, ciphertext: 1.6 kB"
+        }
+    },
+    "Side channel attack countermeasures": {
+        "Kyber": {
             "NL": "ntb",
             "EN": "tbd"
         },
@@ -148,9 +170,31 @@
             "NL": "ntb",
             "EN": "tbd"
         },
-        "Kyber": {
+        "BIKE": {
             "NL": "ntb",
             "EN": "tbd"
+        }
+    },
+    "Key issues": {
+        "Kyber": {
+            "NL": "-",
+            "EN": "-"
+        },
+        "McEliece": {
+            "NL": "-",
+            "EN": "-"
+        },
+        "Frodo": {
+            "NL": "-",
+            "EN": "-"
+        },
+        "HQC": {
+            "NL": "-",
+            "EN": "-"
+        },
+        "BIKE": {
+            "NL": "-",
+            "EN": "Has possible decryption failures, related to performance"
         }
     }
 }
