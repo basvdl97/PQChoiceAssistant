@@ -13,10 +13,10 @@
                 <div v-if="!answered_questions || answered_questions.length == 0" class="mb-16 -mt-8">
                     <div class="text-quadrinary font-semibold text-lg leading-none">
                         <template v-if="language.current == 'EN'">
-                            Please answer all questions to see the results.
+                            Please answer atleast one question to see the results.
                         </template>
                         <template v-else-if="language.current == 'NL'">
-                            Please answer all vragen om de resultaten te zien.
+                            Beantwoord meer dan een vraag om de resultaten te zien.
                         </template>
                     </div>
                 </div>
