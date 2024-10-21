@@ -1,74 +1,98 @@
 export default {
-    "Performance": {
+    "Performance (cycles)": {
         "Level 1": {
-            "Key generation (cycles)": {
+            "Key generation": {
                 "BIKE": 636580,
-                "McEliece": 137345418,
-                "Frodo": 3353565,
+                "Classic McEliece": 137345418,
+                "FrodoKEM": 3353565,
                 "HQC": 104578,
-                "Kyber": 29523
+                "ML-KEM": 29523
             },
-            "Encryption (cycles)": {
+            "Encryption": {
                 "BIKE": 110537,
-                "McEliece": 49004,
-                "Frodo": 3779649,
+                "Classic McEliece": 49004,
+                "FrodoKEM": 3779649,
                 "HQC": 196742,
-                "Kyber": 37250
+                "ML-KEM": 37250
             },
-            "Decryption (cycles)": {
+            "Decryption": {
                 "BIKE": 1750669,
-                "McEliece": 119810,
-                "Frodo": 3707032,
+                "Classic McEliece": 119810,
+                "FrodoKEM": 3707032,
                 "HQC": 359751,
-                "Kyber": 27018
+                "ML-KEM": 27018
             }
         },
         "Level 3": {
-            "Key generation (cycles)": {
+            "Key generation": {
                 "BIKE": 1892240,
-                "McEliece": 430364248,
-                "Frodo": 6880309,
+                "Classic McEliece": 430364248,
+                "FrodoKEM": 6880309,
                 "HQC": 244164,
-                "Kyber": 45796
+                "ML-KEM": 45796
             },
-            "Encryption (cycles)": {
+            "Encryption": {
                 "BIKE": 250696,
-                "McEliece": 90886,
-                "Frodo": 7496346,
+                "Classic McEliece": 90886,
+                "FrodoKEM": 7496346,
                 "HQC": 459679,
-                "Kyber": 54633
+                "ML-KEM": 54633
             },
-            "Decryption (cycles)": {
+            "Decryption": {
                 "BIKE": 4312896,
-                "McEliece": 232302,
-                "Frodo": 7409202,
+                "Classic McEliece": 232302,
+                "FrodoKEM": 7409202,
                 "HQC": 745706,
-                "Kyber": 42180
+                "ML-KEM": 42180
             }
         },
         "Level 5": {
-            "Key generation (cycles)": {
+            "Key generation": {
                 "BIKE": 4535035,
-                "McEliece": 674012157,
-                "Frodo": 12337760,
+                "Classic McEliece": 674012157,
+                "FrodoKEM": 12337760,
                 "HQC": 446071,
-                "Kyber": 62056
+                "ML-KEM": 62056
             },
-            "Encryption (cycles)": {
+            "Encryption": {
                 "BIKE": 504653,
-                "McEliece": 196153,
-                "Frodo": 13267931,
+                "Classic McEliece": 196153,
+                "FrodoKEM": 13267931,
                 "HQC": 844470,
-                "Kyber": 74852
+                "ML-KEM": 74852
             },
-            "Decryption (cycles)": {
+            "Decryption": {
                 "BIKE": 10382235,
-                "McEliece": 273109,
-                "Frodo": 13090622,
+                "Classic McEliece": 273109,
+                "FrodoKEM": 13090622,
                 "HQC": 1409570,
-                "Kyber": 59944
+                "ML-KEM": 59944
             }
         }
     },
-    "Size": {}
+    "Size (bytes)": {
+        "Level 5": {
+            "Private key": {
+                "BIKE": 16494,
+                "Classic McEliece": 13932,
+                "FrodoKEM": 43088,
+                "HQC": 8738,
+                "ML-KEM": 3168
+            },
+            "Public key": {
+                "BIKE": 5122,
+                "Classic McEliece": 1044992,
+                "FrodoKEM": 21520,
+                "HQC": 8698,
+                "ML-KEM": 1568
+            },
+            "Ciphertext": {
+                "BIKE": 5154,
+                "Classic McEliece": 208,
+                "FrodoKEM": 21696,
+                "HQC": 17379,
+                "ML-KEM": 1568
+            }
+        }
+    }
 }
