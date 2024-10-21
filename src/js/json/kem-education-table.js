@@ -4,11 +4,11 @@ export default {
             "NL": "ntb",
             "EN": "Based on quasi-cyclic moderate density parity-check (code-based)"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Based on the decoding of Goppa codes (code-based)"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Based on the learning with errors problem (lattice-based)"
         },
@@ -16,7 +16,7 @@ export default {
             "NL": "ntb",
             "EN": "Based on the Syndrome Decoding problem (code-based)"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Based on the module learning with errors problem (lattice-based)"
         }
@@ -26,11 +26,11 @@ export default {
             "NL": "ntb",
             "EN": "Published in 2018"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Most mature algorithm, in use for over 40 years"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Published in 2016"
         },
@@ -38,7 +38,7 @@ export default {
             "NL": "ntb",
             "EN": "Published in 2017"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Published in 2017"
         }
@@ -48,11 +48,11 @@ export default {
             "NL": "ntb",
             "EN": "tbd (Has been selected for NIST standardization round 4)"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "tbd (Has been selected for NIST standardization round 4)"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Selected as an alternate candidate by NIST, but not selected for standardization"
         },
@@ -60,7 +60,7 @@ export default {
             "NL": "ntb",
             "EN": "tbd (Has been selected for NIST standardization round 4)"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Won NIST's six-year long competition and was selected as its main standard in 2024"
         }
@@ -70,11 +70,11 @@ export default {
             "NL": "ntb",
             "EN": "Integrated in VHDL for Xilinx FPGA"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex M4, FPGA"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex M4, Xilinx Artix-7, ASIC, RISC-V"
         },
@@ -82,7 +82,7 @@ export default {
             "NL": "ntb",
             "EN": "Integrated in Xilinx Artix-7 FPGA"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex A, M53, M4(F), M0+; FPGA, ASIC, SLE 78, RISC-V"
         }
@@ -92,11 +92,11 @@ export default {
             "NL": "ntb",
             "EN": "Small keys, fairly small ciphertexts"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Extremely large public keys, but smallest ciphertexts"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Very large ciphertexts, relatively large keys"
         },
@@ -104,7 +104,7 @@ export default {
             "NL": "ntb",
             "EN": "Small keys, but large ciphertexts"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Very small keys, relatively small ciphertexts"
         }
@@ -114,11 +114,11 @@ export default {
             "NL": "ntb",
             "EN": "Fairly fast key generation, very fast encryption but slower decryption"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Extremely slow key generation, but very fast encryption and decryption"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Very slow encryption, relatively slow decryption and key generation"
         },
@@ -126,7 +126,7 @@ export default {
             "NL": "ntb",
             "EN": "Very fast key generation, also fast encryption and decryption"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Fastest key generation, encryption and decryption"
         }
@@ -136,11 +136,11 @@ export default {
             "NL": "ntb",
             "EN": "tbd"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "tbd"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "tbd"
         },
@@ -148,7 +148,7 @@ export default {
             "NL": "ntb",
             "EN": "tbd"
         },
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "tbd"
         }

@@ -1,6 +1,6 @@
 export default {
     "Information Security": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Based on the learning with errors and short integer solution problems (lattice-based)"
         },
@@ -8,7 +8,7 @@ export default {
             "NL": "ntb",
             "EN": "Based on the NTRU shortest vector problem (lattice-based)"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Based on collision and preimage resistance (hash-based)"
         },
@@ -18,7 +18,7 @@ export default {
         }
     },
     "Maturity": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Published in 2017"
         },
@@ -26,7 +26,7 @@ export default {
             "NL": "ntb",
             "EN": "Published in 2017"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Published in 2017, three years after original SPHINCS"
         },
@@ -36,7 +36,7 @@ export default {
         }
     },
     "Standardisation": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "One of the winners of NIST's six-year long competition, was released as a standard in 2024 as FIPS 204"
         },
@@ -44,7 +44,7 @@ export default {
             "NL": "ntb",
             "EN": "One of the winners of NIST's six-year long competition, is slated to be released as a standard"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "One of the winners of NIST's six-year long competition, was released as a standard in 2024 as FIPS 205"
         },
@@ -54,7 +54,7 @@ export default {
         }
     },
     "Hardware": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Integrated in Intel i5, ARM Cortex, AMD EPYC7452, Xilinx Artix-7, Virtex FPGA, RISC-V"
         },
@@ -62,7 +62,7 @@ export default {
             "NL": "ntb",
             "EN": "Integrated in Intel i5/i7, ARM Cortex A53, AMD EPYC7452, RTX 2080, Virtex FPGA, RISC-V"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Integrated in Ibex, Intel i5, ARM Cortex, AMD EPYC7452, Snapdragon 865"
         },
@@ -72,7 +72,7 @@ export default {
         }
     },
     "Storage": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Large keys, average signatures"
         },
@@ -80,7 +80,7 @@ export default {
             "NL": "ntb",
             "EN": "Small signatures, average key sizes"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Extremely small keys, but extremely large signatures"
         },
@@ -90,7 +90,7 @@ export default {
         }
     },
     "Communication/performance": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Extremely fast key generation, encryption and decryption"
         },
@@ -98,7 +98,7 @@ export default {
             "NL": "ntb",
             "EN": "Very slow key generation, average encryption, very fast decryption"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Average key generation, slow decryption and extremely slow encryption"
         },
@@ -108,7 +108,7 @@ export default {
         }
     },
     "Side channel attacks": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Fairly resistant"
         },
@@ -116,7 +116,7 @@ export default {
             "NL": "ntb",
             "EN": "Use of floating points and discrete sampling make side-channel resistance very challenging"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Fairly resistant"
         },
@@ -126,7 +126,7 @@ export default {
         }
     },
     "Statefulness": {
-        "Dilithium": {
+        "ML-DSA": {
             "NL": "ntb",
             "EN": "Stateless"
         },
@@ -134,7 +134,7 @@ export default {
             "NL": "ntb",
             "EN": "Stateless"
         },
-        "SPHINCS+": {
+        "SLH-DSA": {
             "NL": "ntb",
             "EN": "Stateless"
         },

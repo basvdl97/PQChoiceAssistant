@@ -9,6 +9,9 @@
 
                 <!-- description -->
                 <div class="mt-8 leading-none">
+                    <br/><br/>
+                    <b>Context</b>
+                    <br/><br/>
                     The PQChoiceAssistant is a tool developed by TNO and Centrum Wiskunde & Informatica, with the
                     support of Fox Crypto, NXP, Technolution and Compumatica, commissioned by the Dutch General
                     Intelligence and Security Service (AIVD) and the Ministry of Economic Affairs and Climate Policy (min.
@@ -17,11 +20,24 @@
                     assists organisations in mitigating the threat of quantum computers on currently used cryptography, 
                     by providing concrete advice, tools and methodologies. After the PQC
                     Diagnosis, in which the vulnerable cryptography is identified, the PQChoiceAssistant assists in making
-                    the choice of which algorithm(s) to migrate to.<br /><br/>
-                    There are two separate questionnaires, one for key encapsulation mechanisms (KEMs) and one for Digital Signature Algorithms (DSAs). 
-                    Currently, we support ML-KEM, Classic McEliece, FrodoKEM, HQC and BIKE as
-                    KEMs; and Falcon, ML-DSA, XMSS and SLH-DSA as DSAs. These are the most prominent PQC candidates,
-                    as they are either accepted as a NIST standard or have governmental support.
+                    the choice of which algorithm(s) to migrate to.
+
+                    <br /><br/>
+                    <b> Target Audience</b>
+                    <br /><br/>
+                    This tool is designed specifically for security decision makers, such as CISO's. The tool does not necessarily require cryptography knowledge, but does require knowledge on security and your use case.
+
+                    <br /><br/>
+                    <b> Scope </b>
+                    <br /><br/>
+                    Currently, we support ML-KEM, Classic McEliece, FrodoKEM, HQC and BIKE as Key Encapsulation Mechanisms. We support Falcon, ML-DSA, XMSS and SLH-DSA as Digital Signature Algorithms. These are the most prominent PQC candidates, as they are either accepted as a NIST standard or have governmental support.
+
+                    <br /><br/>
+                    <b>Usage Guide</b>
+                    <br /><br/>
+                    There are two separate questionnaires, one for key encapsulation mechanisms (KEMs) and one for Digital Signature Algorithms (DSAs).<br /><br/>
+                    Organisations typically have multiple use cases where the migration towards PQC is relevant. We recommend filling in the survey per use case. As these use cases can require operational and technical knowledge from multiple domains, filling this in with your team might be beneficial.<br /><br/>
+                    All questions are optional.
                 </div>
             </template>
             <template v-if="language.current == 'NL'">

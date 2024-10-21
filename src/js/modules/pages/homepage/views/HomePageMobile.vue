@@ -20,15 +20,22 @@
             class="w-full max-w-[300px] mb-4 bg-secondary text-white p-3 rounded-lg cursor-pointer">
             <div class="text-xl leading-none mb-2">
                 <template v-if="language.current == 'EN'">
-                    Encryption
+                    Encapsulation
                 </template>
                 <template v-if="language.current == 'NL'">
-                    Encryptie
+                    Encapsulation
                 </template>
             </div>
 
             <div class="w-full flex justify-end items-center">
-                <div>Start survey</div>
+                <div>
+                    <template v-if="language.current == 'EN'">
+                        Start survey
+                    </template>
+                    <template v-if="language.current == 'NL'">
+                        Begin enquête
+                    </template>
+                </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -42,10 +49,24 @@
         <!-- button to DSS / Signatures -->
         <div @click="$router.push({ name: 'DSSPageRoute' })"
             class="w-full max-w-[300px] mb-4 bg-quadrinary text-white p-3 rounded-lg cursor-pointer">
-            <div class="text-xl leading-none mb-2">Signatures</div>
+            <div class="text-xl leading-none mb-2">
+                <template v-if="language.current == 'EN'">
+                    Signatures
+                </template>
+                <template v-if="language.current == 'NL'">
+                    Handtekeningen
+                </template>
+            </div>
 
             <div class="w-full flex justify-end items-center">
-                <div>Start survey</div>
+                <div>
+                    <template v-if="language.current == 'EN'">
+                        Start survey
+                    </template>
+                    <template v-if="language.current == 'NL'">
+                        Begin enquête
+                    </template>
+                </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -61,10 +82,10 @@
             class="w-full max-w-[300px] mb-4 bg-primary text-white p-3 rounded-lg cursor-pointer">
             <div class="text-xl leading-none mb-2">
                 <template v-if="language.current == 'EN'">
-                    Overview of PQC
+                    Overview of PQC algorithms
                 </template>
                 <template v-if="language.current == 'NL'">
-                    Overzicht van PQC
+                    Overzicht van PQC algoritmen
                 </template>
             </div>
 

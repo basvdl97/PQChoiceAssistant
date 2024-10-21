@@ -34,12 +34,12 @@
                     },
                     {
                         value: this.$router.resolve({name: 'KEMPageRoute'}).href.split('/').pop(),
-                        label: 'KEM choice assistant',
+                        label: 'EncChoiceAssistant',
                         route_name: 'KEMPageRoute',
                     },
                     {
                         value: this.$router.resolve({name: 'DSSPageRoute'}).href.split('/').pop(),
-                        label: 'DSS choice assistant',
+                        label: 'DSAChoiceAssistant',
                         route_name: 'DSSPageRoute'
                     },
                     {
