@@ -20,15 +20,22 @@
             class="w-full max-w-[300px] mb-4 bg-secondary text-white p-3 rounded-lg cursor-pointer">
             <div class="text-xl leading-none mb-2">
                 <template v-if="language.current == 'EN'">
-                    Encryption
+                    Encapsulation
                 </template>
                 <template v-if="language.current == 'NL'">
-                    Encryptie
+                    Encapsulation
                 </template>
             </div>
 
             <div class="w-full flex justify-end items-center">
-                <div>Start survey</div>
+                <div>
+                    <template v-if="language.current == 'EN'">
+                        Start survey
+                    </template>
+                    <template v-if="language.current == 'NL'">
+                        Begin enquête
+                    </template>
+                </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -42,10 +49,24 @@
         <!-- button to DSS / Signatures -->
         <div @click="$router.push({ name: 'DSSPageRoute' })"
             class="w-full max-w-[300px] mb-4 bg-quadrinary text-white p-3 rounded-lg cursor-pointer">
-            <div class="text-xl leading-none mb-2">Signatures</div>
+            <div class="text-xl leading-none mb-2">
+                <template v-if="language.current == 'EN'">
+                    Signatures
+                </template>
+                <template v-if="language.current == 'NL'">
+                    Handtekeningen
+                </template>
+            </div>
 
             <div class="w-full flex justify-end items-center">
-                <div>Start survey</div>
+                <div>
+                    <template v-if="language.current == 'EN'">
+                        Start survey
+                    </template>
+                    <template v-if="language.current == 'NL'">
+                        Begin enquête
+                    </template>
+                </div>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-caret-right-fill" viewBox="0 0 16 16">
@@ -61,10 +82,10 @@
             class="w-full max-w-[300px] mb-4 bg-primary text-white p-3 rounded-lg cursor-pointer">
             <div class="text-xl leading-none mb-2">
                 <template v-if="language.current == 'EN'">
-                    Overview of PQC
+                    Overview of PQC algorithms
                 </template>
                 <template v-if="language.current == 'NL'">
-                    Overzicht van PQC
+                    Overzicht van PQC algoritmen
                 </template>
             </div>
 
@@ -136,15 +157,15 @@
 
                 <!-- description -->
                 <div class="mt-8 leading-none  text-justify">
-                    With this open-source tool, you can get advice on the feasibility of various post-quantum
-                    cryptographic algorithms in your use-case.<br /><br />
-                    By answering relevant questions about your situation, you are able to see recommendations on the
+                    This open-source tool provides you with advice on the feasibility of various post-quantum
+                    cryptographic algorithms for your use-case.<br /><br />
+                    By answering relevant questions about your use-case, you are able to see recommendations on the
                     most well-suited option, as well as the pros and cons of the schemes.<br /><br />
                     All information entered in the PQChoiceAssistant is handled client-side, and all calculations are
                     done
                     in the browser. Therefore, no information is stored or viewed by the creators of the
                     PQChoiceAssistant.<br /><br />
-                    <i>For this reason, the tool can also be used offline. You can easily download the website code and
+                    <i>For this reason, the tool can also be used offline. You can download the website code and
                         background material from GitHub, by clicking the GitHub icon in the top right.</i>
                 </div>
             </template>
@@ -156,10 +177,10 @@
 
                 <!-- description -->
                 <div class="mt-8 leading-none  text-justify">
-                    Met deze open-source tool kunt u advise krijgen over de geschiktheid van verschillende post-quantum cryptografische algoritmen die passen bij uw toepassing.<br /><br />
-                    Door relevante vragen over uw situatie te beantwoorden, kunt u aanbevelingen zien over de meest geschikte opties, net als enige voor- en nadelen van elk algoritme.<br /><br />
-                    Alle informatie die u in de PQChoiceAssistant invoert, wordt aan de client-side behandeld, en alle berekeningen worden in uw browser uitgevoerd. Dit zorgt ervoor dat geen informatie wordt opgeslagen of gezien door de makers van de PQChoiceAssistant.<br /><br />
-                    <i>Voor deze reden is het hulpmiddel ook offline te gebruiken. U kunt eenvoudig de websitecode en achtergrondmateriaal downloaden van GitHub, door op de GitHub-icoontje in de rechterbovenhoek te klikken.</i>
+                    Deze open-source tool biedt advies over de geschiktheid van verschillende post-quantum cryptografische algoritmen voor uw toepassing.<br /><br />
+                    Door relevante vragen over uw situatie te beantwoorden, kunt u aanbevelingen zien over de meest geschikte opties, net als de voor- en nadelen van elk algoritme.<br /><br />
+                    Alle informatie die u in de PQChoiceAssistant invoert, wordt aan de client-side behandeld en alle berekeningen worden in uw browser uitgevoerd. Dit zorgt ervoor dat geen informatie wordt opgeslagen of gezien door de makers van de PQChoiceAssistant.<br /><br />
+                    <i>Om deze reden is het hulpmiddel ook offline te gebruiken. U kunt eenvoudig de websitecode en achtergrondmateriaal downloaden van GitHub, door op het GitHub-icoontje in de rechterbovenhoek te klikken.</i>
                 </div>
             </template>
         </div>

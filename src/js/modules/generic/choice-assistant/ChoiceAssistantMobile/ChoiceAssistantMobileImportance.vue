@@ -3,20 +3,20 @@
         <div class="w-full max-w-5xl px-8 mt-12">
             <h1 class="text-primary font-bold text-2xl">
                 <template v-if="language.current == 'EN'">
-                    Indicate which question topics are most important to you.
+                    Indicate which topics are most important to you.
                 </template>
                 <template v-else-if="language.current == 'NL'">
-                    Geef aan welke vraagonderwerpen het belangrijkst zijn voor u.
+                    Geef aan welke onderwerpen het belangrijkste zijn voor u.
                 </template>
             </h1>
             <div class="w-full flex flex-col gap-4 mt-12">
                 <div v-if="!answered_questions || answered_questions.length == 0" class="mb-16 -mt-8">
                     <div class="text-quadrinary font-semibold text-lg leading-none">
                         <template v-if="language.current == 'EN'">
-                            Please answer atleast one question to see the results.
+                            Please answer at least one question to see the results.
                         </template>
                         <template v-else-if="language.current == 'NL'">
-                            Beantwoord meer dan een vraag om de resultaten te zien.
+                            Beantwoord meer dan één vraag om de resultaten te zien.
                         </template>
                     </div>
                 </div>

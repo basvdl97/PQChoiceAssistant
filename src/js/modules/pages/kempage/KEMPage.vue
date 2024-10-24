@@ -17,7 +17,7 @@
         },
         data(){
             return {
-                title_text: 'KEM choice assistant',
+                title_text: 'EncChoiceAssistant',
                 current_question: [0, 0], // based on the json. [catergory, question]
                 questions,
             }
