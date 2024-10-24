@@ -1,14 +1,14 @@
 {
     "Information Security": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Lattice-based. Based on the learning with errors problem in structured (module) lattices"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Code-based. Based on the decoding of Goppa codes"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Lattice-based. Based on the learning with errors problem in unstructured lattices"
         },
@@ -22,15 +22,15 @@
         }
     },
     "Maturity": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Published in 2017"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Most mature algorithm, in use for over 40 years"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Published in 2016"
         },
@@ -44,15 +44,15 @@
         }
     },
     "Standardisation": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Won NIST's six-year long competition and was selected as its main standard in 2024"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Still in competition - has been selected for NIST standardization round 4"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Selected as an alternate candidate by NIST, but not selected for standardization"
         },
@@ -66,15 +66,15 @@
         }
     },
     "Hardware": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex A, M53, M4(F), M0+; FPGA, ASIC, SLE 78, RISC-V"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex M4, FPGA"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Integrated in ARM Cortex M4, Xilinx Artix-7, ASIC, RISC-V"
         },
@@ -88,15 +88,15 @@
         }
     },
     "Storage & communication": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Very small keys, relatively small ciphertexts"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Extremely large public keys, but smallest ciphertexts"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Very large ciphertexts, relatively large keys"
         },
@@ -110,15 +110,15 @@
         }
     },
     "Performance": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Fastest key generation, encryption and decryption"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Extremely slow key generation, but very fast encryption and decryption"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Very slow encryption, relatively slow decryption and key generation"
         },
@@ -132,15 +132,15 @@
         }
     },
     "Sizes (NIST level 1)": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "Public key: 0.8 kB, secret key: 1.6 kB, ciphertext: 0.8 kB"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "Public key: 261 kB, secret key: 6.5 kB, ciphertext: 0.1 kB"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "Public key: 9.6 kB, secret key: 20 kB, ciphertext: 9.8 kB"
         },
@@ -154,15 +154,15 @@
         }
     },
     "Side channel attack countermeasures": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "ntb",
             "EN": "tbd"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "ntb",
             "EN": "tbd"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "ntb",
             "EN": "tbd"
         },
@@ -176,15 +176,15 @@
         }
     },
     "Key issues": {
-        "Kyber": {
+        "ML-KEM": {
             "NL": "-",
             "EN": "-"
         },
-        "McEliece": {
+        "Classic McEliece": {
             "NL": "-",
             "EN": "-"
         },
-        "Frodo": {
+        "FrodoKEM": {
             "NL": "-",
             "EN": "-"
         },
