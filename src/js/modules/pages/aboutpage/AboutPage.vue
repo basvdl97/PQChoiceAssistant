@@ -16,7 +16,7 @@
                     support of Fox Crypto, NXP, Technolution and Compumatica, commissioned by the Dutch General
                     Intelligence and Security Service (AIVD) and the Ministry of Economic Affairs and Climate Policy (min.
                     EZK), and executed under the dcypher roadmap Cryptography.<br /><br/>
-                    The PQChoiceAssistant is an extension to the <a href="https://www.tno.nl/en/newsroom/2023/04-0/pqc-migration-handbook/">PQC Migration Handbook</a>. The PQC Migration Handbook
+                    The PQChoiceAssistant is an extension to the <a class="text-primary hover:underline" href="https://www.tno.nl/en/newsroom/2023/04-0/pqc-migration-handbook/">PQC Migration Handbook</a>. The PQC Migration Handbook
                     assists organisations in mitigating the threat of quantum computers on currently used cryptography, 
                     by providing concrete advice, tools and methodologies. After the PQC
                     Diagnosis, in which the vulnerable cryptography is identified, the PQChoiceAssistant assists in making
