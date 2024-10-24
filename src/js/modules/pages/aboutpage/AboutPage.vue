@@ -49,7 +49,7 @@
                 <!-- description -->
                 <div class="mt-8 leading-none">
                     De PQChoiceAssistant is een tool ontwikkeld door TNO en Centrum Wiskunde & Informatica, met de ondersteuning van Fox Crypto, NXP, Technolution and Compumatica, in opdracht van de AIVD en het Ministerie van Economische Zaken en Klimaat, uitgevoerd onder de dcypher roadmap Cryptografie.<br /><br />
-                    De PQChoiceAssistant is een uitbreiding op het <a href="https://www.tno.nl/nl/newsroom/2023/04/pqc-migratie-handboek/">PQC Migratie Handboek</a>. Het PQC Migratie Handboek ondersteunt organisaties in het mitigeren van de quantumdreiging op de huidige cryptografie,
+                    De PQChoiceAssistant is een uitbreiding op het <a class="text-primary hover:underline" href="https://www.tno.nl/nl/newsroom/2023/04/pqc-migratie-handboek/">PQC Migratie Handboek</a>. Het PQC Migratie Handboek ondersteunt organisaties in het mitigeren van de quantumdreiging op de huidige cryptografie,
                     door concreet advies, tooling en methodologieën aan te bieden. 
                     Na een PQC Diagnose, waarbij kwetsbare cryptografie wordt vastgesteld, helpt de PQChoiceAssistant bij het maken van de keuze naar welk(e) algoritme(n) te migreren.<br /><br />
                     Er zijn twee losse vragenlijsten, één voor Key Encapsulation Mechanism (KEMs) en een voor Digital Signature Algorithms (DSAs). Momenteel ondersteunen we ML-KEM, Classic McEliece, FrodoKEM, HQC en BIKE als KEMs; en Falcon, ML-DSA, XMSS and SLH-DSA as DSAs. Dit zijn de meest prominente kandidaten, omdat ze ofwel geaccepteerd zijn al NIST-standaard, of overheidsondersteuning hebben.
